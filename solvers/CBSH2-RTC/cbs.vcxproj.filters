@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\CBS.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\CBSHeuristic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\CBSNode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\Conflict.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\ConstraintPropagation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\ConstraintTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\CorridorReasoning.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\IncrementalPairwiseMutexPropagation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\Instance.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\MDD.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\MutexReasoning.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\RectangleReasoning.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\ReservationTable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\SIPP.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\SingleAgentSolver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\SpaceTimeAStar.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\common.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\src\driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{EC080902-0D66-3096-A4A3-F4F3CC283375}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

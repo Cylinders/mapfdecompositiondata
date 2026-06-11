@@ -1,0 +1,10 @@
+^C:\USERS\OGVRU\DOCUMENTS\GITHUB\CBSH2-RTC\CMAKEFILES\0F92CBDDE9EB515FE0AA9F41F6C0A30F\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/ogvru/Documents/GitHub/CBSH2-RTC -BC:/Users/ogvru/Documents/GitHub/CBSH2-RTC --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/ogvru/Documents/GitHub/CBSH2-RTC/cbs.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\ogvru\Documents\GitHub\CBSH2-RTC\CMakeFiles\0f92cbdde9eb515fe0aa9f41f6c0a30f\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{B6127228-153A-3186-8FE3-2DE0CF6C8A8F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
