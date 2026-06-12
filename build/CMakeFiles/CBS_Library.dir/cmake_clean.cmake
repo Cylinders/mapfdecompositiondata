@@ -5,6 +5,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/LowLevelSolver.cpp.o.d"
   "CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/TreeNode.cpp.o"
   "CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/TreeNode.cpp.o.d"
+  "CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/conflictbasedsearch.cpp.o"
+  "CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/conflictbasedsearch.cpp.o.d"
   "libCBS_Library.a"
   "libCBS_Library.pdb"
 )

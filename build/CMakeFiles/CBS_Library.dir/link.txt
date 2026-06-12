@@ -1,2 +1,2 @@
-/usr/bin/ar qc libCBS_Library.a CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/HighLevelSolver.cpp.o CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/LowLevelSolver.cpp.o CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/TreeNode.cpp.o
+/usr/bin/ar qc libCBS_Library.a CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/HighLevelSolver.cpp.o CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/LowLevelSolver.cpp.o CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/TreeNode.cpp.o CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/conflictbasedsearch.cpp.o
 /usr/bin/ranlib libCBS_Library.a

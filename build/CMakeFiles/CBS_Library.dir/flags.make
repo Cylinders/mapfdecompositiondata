@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/ogvruth/zhouResearchSP26/pickyrobots/solvers/ConflictBasedSearch
+CXX_INCLUDES = -I/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/ConflictBasedSearch
 
 CXX_FLAGS = -std=gnu++17
 

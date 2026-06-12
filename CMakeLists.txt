@@ -22,28 +22,10 @@ target_include_directories(CBSH2_Library PUBLIC
 target_link_libraries(CBSH2_Library PUBLIC ${Boost_LIBRARIES})
 
 # =======================================================
-# LIBRARY 2: ConflictBasedSearch
-# =======================================================
-# Define the path to the new solver
-set(CBS_DIR "solvers/ConflictBasedSearch") 
-
-# Grab all the .cpp files (notice there is no /src/ folder here)
-file(GLOB CBS_SOURCES "${CBS_DIR}/*.cpp")
-
-# Exclude their main.cpp so it doesn't conflict with yours
-list(REMOVE_ITEM CBS_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/${CBS_DIR}/main.cpp")
-
-# Create the library
-add_library(CBS_Library STATIC ${CBS_SOURCES})
-
-# Include headers (they are in the exact same folder as the source code)
-target_include_directories(CBS_Library PUBLIC ${CBS_DIR})
-
-# =======================================================
 # YOUR MAIN APPLICATION
 # =======================================================
 # Build your executable
 add_executable(MyApp src/main.cpp)
 
 # Link BOTH libraries to your app
-target_link_libraries(MyApp PRIVATE CBSH2_Library CBS_Library)
+target_link_libraries(MyApp PRIVATE CBSH2_Library)

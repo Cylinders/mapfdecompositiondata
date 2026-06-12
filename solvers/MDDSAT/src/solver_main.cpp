@@ -111,7 +111,7 @@ namespace sReloc
     }
 
 
-    sResult solve_MultirobotInstance_SAT(const sCommandParameters &command_parameters)
+sResult solve_MultirobotInstance_SAT(const sCommandParameters &command_parameters)
     {
 	sUndirectedGraph environment;
 
@@ -1003,6 +1003,7 @@ namespace sReloc
 /*----------------------------------------------------------------------------*/
 // main program
 
+/*
 int main(int argc, char **argv)
 {
     sResult result;
@@ -1037,4 +1038,5 @@ int main(int argc, char **argv)
 
     return sRESULT_SUCCESS;
 }
+	*/
 
