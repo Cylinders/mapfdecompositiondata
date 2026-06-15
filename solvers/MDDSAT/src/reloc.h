@@ -258,6 +258,8 @@ namespace sReloc
 	virtual void to_Stream_multirobot(FILE *fw, const sString &indent = "") const;
 
 	virtual sResult from_File_multirobot(const sString &filename);
+	virtual sResult from_String_multirobot(const sString &graphdata);
+	
 	virtual sResult from_Stream_multirobot(FILE *fr);
 
 	virtual sResult from_File_map(const sString &filename);

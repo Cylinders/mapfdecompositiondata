@@ -19,7 +19,8 @@
 #include <stdlib.h>
 #include <sys/time.h>
 #include <sys/times.h>
-
+#include <unistd.h>
+#include <ctime>
 #include "config.h"
 #include "compile.h"
 #include "statistics.h"

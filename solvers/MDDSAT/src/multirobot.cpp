@@ -18,8 +18,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
-
+#include <sstream>
 #include <map>
+#include <string>
+#include <iomanip>
+#include <ctime>
 //#include <unordered_map>
 
 #include "config.h"
@@ -602,6 +605,7 @@ namespace sReloc
     }
 
 
+
     sResult sRobotArrangement::from_File_multirobot(const sString &filename, int component)
     {
 	sResult result;
@@ -745,6 +749,133 @@ namespace sReloc
 	return sRESULT_SUCCESS;
     }
 
+	sResult sRobotArrangement::from_String_multirobot(const sString &graphData, int component)
+{
+    m_robot_Locs.clear();
+    m_vertex_Occups.clear();
+
+    std::istringstream iss(graphData.c_str());
+    std::string line;
+
+    int N_Robots = 0;
+    int N_Vertices = 0;
+
+    // 1. Scan until we hit the 'V' (Vertices marker)
+    while (std::getline(iss, line))
+    {
+        if (!line.empty() && line[0] == 'V')
+        {
+            break;
+        }
+    }
+
+    // Save the stream position to do the two-pass processing (simulates ftell)
+    std::streampos position = iss.tellg();
+
+    // 2. Pass 1: Count N_Robots and N_Vertices
+    while (std::getline(iss, line))
+    {
+        if (line.empty()) continue; // Guard against blank lines
+
+        if (line[0] == '(')
+        {
+            int vertex_id = 0, cycle_id = 0, robot_id = 0;
+
+            // line.c_str() + 1 safely skips the '(' character 
+            switch (component)
+            {
+                case 0:
+                    sscanf(line.c_str() + 1, "%d:%d)[%d", &vertex_id, &cycle_id, &robot_id);
+                    break;
+                case 1:
+                {
+                    int dummy_robot_1_id = 0;
+                    sscanf(line.c_str() + 1, "%d:%d)[%d:%d", &vertex_id, &cycle_id, &dummy_robot_1_id, &robot_id);
+                    break;
+                }
+                case 2:
+                {
+                    int dummy_robot_1_id = 0, dummy_robot_2_id = 0;
+                    sscanf(line.c_str() + 1, "%d:%d)[%d:%d:%d", &vertex_id, &cycle_id, &dummy_robot_1_id, &dummy_robot_2_id, &robot_id);
+                    break;
+                }
+                default:
+                    sASSERT(false);
+                    break;
+            }
+
+            if (robot_id > 0)
+            {
+                ++N_Robots;
+            }
+            ++N_Vertices;
+        }
+        else
+        {
+            // We've hit a line that doesn't start with '(', meaning the block is done.
+            break;
+        }
+    }
+
+    // 3. Reset stream position for Pass 2 (simulates fseek)
+    iss.clear(); // Important: Clears EOF or error flags if the first pass hit the end of the string
+    iss.seekg(position);
+    
+    if (iss.fail())
+    {
+        // Replace with your equivalent of sROBOT_ARRANGEMENT_SEEK_ERROR if needed
+        return EXIT_FAILURE; 
+    }
+
+    m_robot_Locs.resize(N_Robots + 1, UNDEFINED_LOCATION);
+    m_vertex_Occups.resize(N_Vertices, VACANT_VERTEX);
+
+    // 4. Pass 2: Actually populate the location and occupation arrays
+    while (std::getline(iss, line))
+    {
+        if (line.empty()) continue;
+
+        if (line[0] == '(')
+        {
+            int vertex_id = 0, cycle_id = 0, robot_id = 0;
+
+            switch (component)
+            {
+                case 0:
+                    sscanf(line.c_str() + 1, "%d:%d)[%d", &vertex_id, &cycle_id, &robot_id);
+                    break;
+                case 1:
+                {
+                    int dummy_robot_1_id = 0;
+                    sscanf(line.c_str() + 1, "%d:%d)[%d:%d", &vertex_id, &cycle_id, &dummy_robot_1_id, &robot_id);
+                    break;
+                }
+                case 2:
+                {
+                    int dummy_robot_1_id = 0, dummy_robot_2_id = 0;
+                    sscanf(line.c_str() + 1, "%d:%d)[%d:%d:%d", &vertex_id, &cycle_id, &dummy_robot_1_id, &dummy_robot_2_id, &robot_id);
+                    break;
+                }
+                default:
+                    sASSERT(false);
+                    break;
+            }
+
+            if (robot_id > 0)
+            {
+                m_robot_Locs[robot_id] = vertex_id;
+                m_vertex_Occups[vertex_id] = robot_id;
+            }
+        }
+        else
+        {
+            break;
+        }
+    }
+
+    return sRESULT_SUCCESS;
+}
+	
 
 /*----------------------------------------------------------------------------*/
 // sRobotGoal
@@ -1360,6 +1491,121 @@ namespace sReloc
 	return sRESULT_SUCCESS;
     }
 
+
+	sResult sRobotGoal::from_String_multirobot(const sString &input_data, int component)
+{
+    m_robot_Goals.clear();
+    m_goal_Compats.clear();
+
+    std::stringstream ss(input_data);
+    std::string line;
+    Robots_set all_robot_IDs;
+
+    // We use a temporary struct to hold the parsed data so we don't 
+    // have to read the string twice like the old fseek() logic did.
+    struct ParsedGoal {
+        int vertex_id;
+        bool is_set;
+        int single_robot_id = 0;
+        Robots_set robot_ids;
+    };
+    std::vector<ParsedGoal> parsed_goals;
+
+    // 1. Skip lines until we find the header 'V'
+    while (std::getline(ss, line)) {
+        if (!line.empty() && line[0] == 'V') break;
+    }
+
+    // 2. Process the data lines
+    while (std::getline(ss, line)) {
+        // Trim leading whitespace
+        size_t pos = line.find_first_not_of(" \t\r");
+        
+        // Skip empty lines or lines that don't start with '(' (like the " =\n" line)
+        if (pos == std::string::npos || line[pos] != '(') continue; 
+
+        // Find the delimiters for "(vertex_id:cycle_id)["
+        size_t colon_pos = line.find(':', pos);
+        size_t bracket_pos = line.find('[', pos);
+        
+        if (colon_pos == std::string::npos || bracket_pos == std::string::npos) continue;
+
+        ParsedGoal pg;
+        try {
+            // Extract vertex_id
+            pg.vertex_id = std::stoi(line.substr(pos + 1, colon_pos - pos - 1));
+        } catch (...) { 
+            continue; // Skip malformed lines
+        } 
+
+        pos = bracket_pos + 1;
+
+        // Skip dummy variables based on the component type (0, 1, or 2)
+        // This replaces the bulky switch(component) statements
+        for (int i = 0; i < component; ++i) {
+            pos = line.find(':', pos);
+            if (pos != std::string::npos) pos++; // Move past ':'
+            else break;
+        }
+
+        if (pos == std::string::npos || pos >= line.length()) continue;
+
+        // Check if we are reading a set '{...}' or a single ID
+        if (line[pos] == '{') {
+            pg.is_set = true;
+            size_t end_brace = line.find('}', pos);
+            if (end_brace != std::string::npos) {
+                std::string set_str = line.substr(pos + 1, end_brace - pos - 1);
+                std::stringstream set_ss(set_str);
+                std::string token;
+                
+                // Split the set by comma (Replaces the 3rd function)
+                while (std::getline(set_ss, token, ',')) {
+                    try {
+                        int r_id = std::stoi(token);
+                        pg.robot_ids.insert(r_id);
+                        all_robot_IDs.insert(r_id);
+                    } catch (...) {} 
+                }
+            }
+        } else {
+            pg.is_set = false;
+            // Parse a single robot ID
+            size_t end_num = line.find_first_not_of("0123456789", pos);
+            std::string num_str = line.substr(pos, end_num - pos);
+            try {
+                pg.single_robot_id = std::stoi(num_str);
+                if (pg.single_robot_id > 0) {
+                    all_robot_IDs.insert(pg.single_robot_id);
+                }
+            } catch (...) {}
+        }
+        
+        parsed_goals.push_back(pg);
+    }
+
+    // 3. Allocate memory based on unique robots and total vertices
+    int N_Robots = all_robot_IDs.size();
+    int N_Vertices = parsed_goals.size();
+
+    m_robot_Goals.resize(N_Robots + 1);
+    m_goal_Compats.resize(N_Vertices);
+
+    // 4. Assign goals using our stored struct data
+    for (const auto& pg : parsed_goals) {
+        if (pg.is_set) {
+            if (!pg.robot_ids.empty()) {
+                assign_Goal(pg.vertex_id, pg.robot_ids);
+            }
+        } else {
+            if (pg.single_robot_id > 0) {
+                assign_Goal(pg.vertex_id, pg.single_robot_id);
+            }
+        }
+    }
+
+    return sRESULT_SUCCESS;
+}
 
 /*----------------------------------------------------------------------------*/
 // sMultirobotEncodingContext_CNFsat
@@ -3265,6 +3511,7 @@ namespace sReloc
 
     void sMultirobotInstance::to_Stream_problemPDDL(FILE *fw, const sString &indent) const
     {
+	printf("hello");
 	fprintf(fw, "%s(define (problem multirobot_instance)\n", indent.c_str());
 	fprintf(fw, "%s%s(:domain multirobot)\n", indent.c_str(), sRELOC_INDENT.c_str());
 
@@ -15646,6 +15893,36 @@ namespace sReloc
 	to_Stream(stdout, indent);
     }
 
+	std::string sMultirobotSolution::to_String() const
+{
+    std::ostringstream oss;
+    
+    // Calculate parallelism (added a safeguard against division by zero)
+    double parallelism = m_Steps.empty() ? 0.0 : (double)m_Moves_cnt / m_Steps.size();
+
+    // Replicating: fprintf(fw, "%sMulirobot solution: (|moves| = %d, paralellism = %.3f) [\n", ...
+    oss << "Mulirobot solution: (|moves| = " << m_Moves_cnt 
+        << ", paralellism = " << std::fixed << std::setprecision(3) << parallelism << ") [\n";
+
+    int N_Steps = m_Steps.size();
+    for (int i = 0; i < N_Steps; ++i)
+    {
+        const Step &step = m_Steps[i];
+        
+        oss << sRELOC_INDENT << "Step " << step.m_time << ": ";
+
+        for (Moves_list::const_iterator move = step.m_Moves.begin(); move != step.m_Moves.end(); ++move)
+        {
+            // Replicating: fprintf(fw, "%d#%d->%d ", ...
+            oss << move->m_robot_id << "#" << move->m_src_vrtx_id << "->" << move->m_dest_vrtx_id << " ";
+        }
+        oss << "\n";
+    }
+
+    oss << "]\n";
+
+    return oss.str();
+}
 
     void sMultirobotSolution::to_Stream(FILE *fw, const sString &indent) const
     {

@@ -18,6 +18,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <limits.h>
+#include <iostream>
+#include <sstream>
+#include <string>
+#include <cstdio>
 
 #include "config.h"
 #include "compile.h"
@@ -1802,7 +1806,6 @@ namespace sReloc
 	return sRESULT_SUCCESS;
     }
 
-
     sResult sUndirectedGraph::from_Stream_multirobot(FILE *fr)
     {
 	m_Vertices.clear();
@@ -1812,6 +1815,7 @@ namespace sReloc
 
 	while (c != 'V')
 	{
+		std::cout << "hello \n";
 	    if (c != '\n')
 	    {
 		while(fgetc(fr) != '\n');
@@ -1858,6 +1862,72 @@ namespace sReloc
 	return sRESULT_SUCCESS;
     }
 
+	sResult sUndirectedGraph::from_String_multirobot(const sString &graphData)
+	{
+    m_Vertices.clear();
+    m_Edges.clear();
+
+    // Initialize the string stream. 
+    // (Assuming sString can be converted to std::string or has a .c_str() method)
+    std::istringstream iss(graphData.c_str());
+    std::string line;
+
+    // 1. Scan until we hit the 'V' (Vertices marker)
+    while (std::getline(iss, line))
+    {
+        if (!line.empty() && line[0] == 'V')
+        {
+            // Found the "V =" line
+            break;
+        }
+        std::cout << "hello \n";
+    }
+
+    // 2. Read all Vertices
+    while (std::getline(iss, line))
+    {
+        if (line.empty()) continue; // Guard against blank lines
+
+        if (line[0] == '(')
+        {
+            add_Vertex();
+        }
+        else
+        {
+            // The moment a line doesn't start with '(', we've reached the end 
+            // of the vertices. This is likely the "E =" (Edges) line. Break out.
+            break;
+        }
+    }
+
+    // 3. Read all Edges
+    // We continue reading from the stream, expecting lines starting with '{'
+    while (std::getline(iss, line))
+    {
+        if (line.empty()) continue;
+
+        if (line[0] == '{')
+        {
+            int u_id = 0, v_id = 0;
+            
+            // line.c_str() + 1 safely skips the '{' character at index 0.
+            // We use sscanf to grab the integers natively.
+            if (sscanf(line.c_str() + 1, "%d,%d", &u_id, &v_id) == 2)
+            {
+#ifdef sVERBOSE
+#endif
+                add_Edge(u_id, v_id);
+            }
+        }
+        else
+        {
+            // Stop if we hit a line that doesn't start with '{'
+            break; 
+        }
+    }
+
+    return sRESULT_SUCCESS;
+}
 
     sResult sUndirectedGraph::to_File_multirobot(const sString &filename, const sString &indent) const
     {

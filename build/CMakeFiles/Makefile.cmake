@@ -151,6 +151,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/CBSH2_Library.dir/DependInfo.cmake"
-  "CMakeFiles/CBS_Library.dir/DependInfo.cmake"
+  "CMakeFiles/MDDSAT_Library.dir/DependInfo.cmake"
   "CMakeFiles/MyApp.dir/DependInfo.cmake"
   )

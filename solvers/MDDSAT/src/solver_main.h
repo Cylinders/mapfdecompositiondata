@@ -81,10 +81,11 @@ namespace sReloc
     void print_IntroductoryMessage(void);
     void print_ConcludingMessage(void);
     void print_Help(void);
+	std::string MDDSATSolver(int argc, char **argv);
     
     sResult parse_CommandLineParameter(const sString &parameter, sCommandParameters &parameters);
 
-    sResult solve_MultirobotInstance_SAT(const sCommandParameters &parameters);
+    std::string solve_MultirobotInstance_SAT(const sCommandParameters &parameters);
 
 
 /*----------------------------------------------------------------------------*/

@@ -18,6 +18,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include <ctime>
 #include "config.h"
 #include "compile.h"
 #include "defs.h"

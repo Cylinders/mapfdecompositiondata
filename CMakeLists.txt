@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 project(MyMAPFProject VERSION 1.0)
+set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # C++17 is fine!
 set(CMAKE_CXX_STANDARD 17)
@@ -21,6 +22,16 @@ target_include_directories(CBSH2_Library PUBLIC
 )
 target_link_libraries(CBSH2_Library PUBLIC ${Boost_LIBRARIES})
 
+
+
+# =======================================================
+# LIBRARY 2: reLOC (MDDSAT)
+# =======================================================
+set(MDDSAT "./solvers/MDDSAT") 
+file(GLOB MDDSAT_SOURCES "${MDDSAT}/src/*.cpp")
+message(STATUS "MDDSAT Sources found: ${MDDSAT_SOURCES}")
+add_library(MDDSAT_Library STATIC ${MDDSAT_SOURCES})
+
 # =======================================================
 # YOUR MAIN APPLICATION
 # =======================================================
@@ -28,4 +39,7 @@ target_link_libraries(CBSH2_Library PUBLIC ${Boost_LIBRARIES})
 add_executable(MyApp src/main.cpp)
 
 # Link BOTH libraries to your app
-target_link_libraries(MyApp PRIVATE CBSH2_Library)
+target_include_directories(MyApp PRIVATE 
+    "${CMAKE_CURRENT_SOURCE_DIR}/solvers/MDDSAT/src"
+)
+target_link_libraries(MyApp PRIVATE CBSH2_Library MDDSAT_Library)

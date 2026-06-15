@@ -47,8 +47,8 @@ namespace sReloc
     class sRobotArrangement
     {
     public:
-	static const int VACANT_VERTEX = 0; /* Robots are numbered starting with 1 */
-	static const int UNDEFINED_LOCATION = -1;
+	static inline const int VACANT_VERTEX = 0; /* Robots are numbered starting with 1 */
+	static inline const int UNDEFINED_LOCATION = -1;
 
 	static const int RANDOM_WALK_LENGTH = sDEFAULT_RANDOM_WALK_LENGTH;
 
@@ -63,6 +63,7 @@ namespace sReloc
 	sRobotArrangement(const sRobotArrangement &initial_arrangement, int N_Vertices, int N_Robots, bool random = false);
 	sRobotArrangement(const sRobotArrangement &initial_arrangement, int N_Vertices, int N_Robots, int N_fixed, bool random = false);
 	sRobotArrangement(const sRobotArrangement &robot_arrangement);
+	
 	const sRobotArrangement& operator=(const sRobotArrangement &robot_arrangement);
 
 	bool operator==(const sRobotArrangement &robot_arrangement) const;
@@ -99,7 +100,7 @@ namespace sReloc
 
 	virtual sResult from_File_multirobot(const sString &filename, int component = 0);
 	virtual sResult from_Stream_multirobot(FILE *fr, int component = 0);
-
+	virtual sResult from_String_multirobot(const sString &graphData, int component = 0);
     public:
 	Robots_vector m_robot_Locs;
 	Vertices_vector m_vertex_Occups;
@@ -162,6 +163,7 @@ namespace sReloc
 	virtual sResult from_File_multirobot(const sString &filename, int component = 0);
 	virtual sResult from_Stream_multirobot(FILE *fr, int component = 0);
 	virtual sResult from_Stream_multirobot(FILE *fr, Robots_set &robot_IDs);
+	virtual sResult from_String_multirobot(const sString &input_data, int component=0);
 
     public:
 	Goals_vector m_robot_Goals;
@@ -527,10 +529,12 @@ namespace sReloc
 
     public:
 	virtual void to_Screen(const sString &indent = "") const;
+	virtual string to_String() const;
 	virtual void to_Stream(FILE *fw, const sString &indent = "") const;
 
 	virtual sResult to_File_multirobot(const sString &filename, const sString &indent = "") const;
 	virtual void to_Stream_multirobot(FILE *fw, const sString &indent = "") const;
+	
 
 	virtual sResult from_File_multirobot(const sString &filename);
 	virtual sResult from_Stream_multirobot(FILE *fr);

@@ -130,17 +130,17 @@ CBSH2_Library/fast:
 .PHONY : CBSH2_Library/fast
 
 #=============================================================================
-# Target rules for targets named CBS_Library
+# Target rules for targets named MDDSAT_Library
 
 # Build rule for target.
-CBS_Library: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CBS_Library
-.PHONY : CBS_Library
+MDDSAT_Library: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 MDDSAT_Library
+.PHONY : MDDSAT_Library
 
 # fast build rule for target.
-CBS_Library/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/build
-.PHONY : CBS_Library/fast
+MDDSAT_Library/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/build
+.PHONY : MDDSAT_Library/fast
 
 #=============================================================================
 # Target rules for targets named MyApp
@@ -563,101 +563,605 @@ solvers/CBSH2-RTC/src/common.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBSH2_Library.dir/build.make CMakeFiles/CBSH2_Library.dir/solvers/CBSH2-RTC/src/common.cpp.s
 .PHONY : solvers/CBSH2-RTC/src/common.cpp.s
 
-solvers/ConflictBasedSearch/HighLevelSolver.o: solvers/ConflictBasedSearch/HighLevelSolver.cpp.o
-.PHONY : solvers/ConflictBasedSearch/HighLevelSolver.o
+solvers/MDDSAT/src/alldiff_test.o: solvers/MDDSAT/src/alldiff_test.cpp.o
+.PHONY : solvers/MDDSAT/src/alldiff_test.o
 
 # target to build an object file
-solvers/ConflictBasedSearch/HighLevelSolver.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/HighLevelSolver.cpp.o
-.PHONY : solvers/ConflictBasedSearch/HighLevelSolver.cpp.o
+solvers/MDDSAT/src/alldiff_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/alldiff_test.cpp.o
+.PHONY : solvers/MDDSAT/src/alldiff_test.cpp.o
 
-solvers/ConflictBasedSearch/HighLevelSolver.i: solvers/ConflictBasedSearch/HighLevelSolver.cpp.i
-.PHONY : solvers/ConflictBasedSearch/HighLevelSolver.i
+solvers/MDDSAT/src/alldiff_test.i: solvers/MDDSAT/src/alldiff_test.cpp.i
+.PHONY : solvers/MDDSAT/src/alldiff_test.i
 
 # target to preprocess a source file
-solvers/ConflictBasedSearch/HighLevelSolver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/HighLevelSolver.cpp.i
-.PHONY : solvers/ConflictBasedSearch/HighLevelSolver.cpp.i
+solvers/MDDSAT/src/alldiff_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/alldiff_test.cpp.i
+.PHONY : solvers/MDDSAT/src/alldiff_test.cpp.i
 
-solvers/ConflictBasedSearch/HighLevelSolver.s: solvers/ConflictBasedSearch/HighLevelSolver.cpp.s
-.PHONY : solvers/ConflictBasedSearch/HighLevelSolver.s
+solvers/MDDSAT/src/alldiff_test.s: solvers/MDDSAT/src/alldiff_test.cpp.s
+.PHONY : solvers/MDDSAT/src/alldiff_test.s
 
 # target to generate assembly for a file
-solvers/ConflictBasedSearch/HighLevelSolver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/HighLevelSolver.cpp.s
-.PHONY : solvers/ConflictBasedSearch/HighLevelSolver.cpp.s
+solvers/MDDSAT/src/alldiff_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/alldiff_test.cpp.s
+.PHONY : solvers/MDDSAT/src/alldiff_test.cpp.s
 
-solvers/ConflictBasedSearch/LowLevelSolver.o: solvers/ConflictBasedSearch/LowLevelSolver.cpp.o
-.PHONY : solvers/ConflictBasedSearch/LowLevelSolver.o
+solvers/MDDSAT/src/autooptim_main.o: solvers/MDDSAT/src/autooptim_main.cpp.o
+.PHONY : solvers/MDDSAT/src/autooptim_main.o
 
 # target to build an object file
-solvers/ConflictBasedSearch/LowLevelSolver.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/LowLevelSolver.cpp.o
-.PHONY : solvers/ConflictBasedSearch/LowLevelSolver.cpp.o
+solvers/MDDSAT/src/autooptim_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/autooptim_main.cpp.o
+.PHONY : solvers/MDDSAT/src/autooptim_main.cpp.o
 
-solvers/ConflictBasedSearch/LowLevelSolver.i: solvers/ConflictBasedSearch/LowLevelSolver.cpp.i
-.PHONY : solvers/ConflictBasedSearch/LowLevelSolver.i
+solvers/MDDSAT/src/autooptim_main.i: solvers/MDDSAT/src/autooptim_main.cpp.i
+.PHONY : solvers/MDDSAT/src/autooptim_main.i
 
 # target to preprocess a source file
-solvers/ConflictBasedSearch/LowLevelSolver.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/LowLevelSolver.cpp.i
-.PHONY : solvers/ConflictBasedSearch/LowLevelSolver.cpp.i
+solvers/MDDSAT/src/autooptim_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/autooptim_main.cpp.i
+.PHONY : solvers/MDDSAT/src/autooptim_main.cpp.i
 
-solvers/ConflictBasedSearch/LowLevelSolver.s: solvers/ConflictBasedSearch/LowLevelSolver.cpp.s
-.PHONY : solvers/ConflictBasedSearch/LowLevelSolver.s
+solvers/MDDSAT/src/autooptim_main.s: solvers/MDDSAT/src/autooptim_main.cpp.s
+.PHONY : solvers/MDDSAT/src/autooptim_main.s
 
 # target to generate assembly for a file
-solvers/ConflictBasedSearch/LowLevelSolver.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/LowLevelSolver.cpp.s
-.PHONY : solvers/ConflictBasedSearch/LowLevelSolver.cpp.s
+solvers/MDDSAT/src/autooptim_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/autooptim_main.cpp.s
+.PHONY : solvers/MDDSAT/src/autooptim_main.cpp.s
 
-solvers/ConflictBasedSearch/TreeNode.o: solvers/ConflictBasedSearch/TreeNode.cpp.o
-.PHONY : solvers/ConflictBasedSearch/TreeNode.o
+solvers/MDDSAT/src/cnf.o: solvers/MDDSAT/src/cnf.cpp.o
+.PHONY : solvers/MDDSAT/src/cnf.o
 
 # target to build an object file
-solvers/ConflictBasedSearch/TreeNode.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/TreeNode.cpp.o
-.PHONY : solvers/ConflictBasedSearch/TreeNode.cpp.o
+solvers/MDDSAT/src/cnf.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/cnf.cpp.o
+.PHONY : solvers/MDDSAT/src/cnf.cpp.o
 
-solvers/ConflictBasedSearch/TreeNode.i: solvers/ConflictBasedSearch/TreeNode.cpp.i
-.PHONY : solvers/ConflictBasedSearch/TreeNode.i
+solvers/MDDSAT/src/cnf.i: solvers/MDDSAT/src/cnf.cpp.i
+.PHONY : solvers/MDDSAT/src/cnf.i
 
 # target to preprocess a source file
-solvers/ConflictBasedSearch/TreeNode.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/TreeNode.cpp.i
-.PHONY : solvers/ConflictBasedSearch/TreeNode.cpp.i
+solvers/MDDSAT/src/cnf.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/cnf.cpp.i
+.PHONY : solvers/MDDSAT/src/cnf.cpp.i
 
-solvers/ConflictBasedSearch/TreeNode.s: solvers/ConflictBasedSearch/TreeNode.cpp.s
-.PHONY : solvers/ConflictBasedSearch/TreeNode.s
+solvers/MDDSAT/src/cnf.s: solvers/MDDSAT/src/cnf.cpp.s
+.PHONY : solvers/MDDSAT/src/cnf.s
 
 # target to generate assembly for a file
-solvers/ConflictBasedSearch/TreeNode.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/TreeNode.cpp.s
-.PHONY : solvers/ConflictBasedSearch/TreeNode.cpp.s
+solvers/MDDSAT/src/cnf.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/cnf.cpp.s
+.PHONY : solvers/MDDSAT/src/cnf.cpp.s
 
-solvers/ConflictBasedSearch/conflictbasedsearch.o: solvers/ConflictBasedSearch/conflictbasedsearch.cpp.o
-.PHONY : solvers/ConflictBasedSearch/conflictbasedsearch.o
+solvers/MDDSAT/src/cnf_test.o: solvers/MDDSAT/src/cnf_test.cpp.o
+.PHONY : solvers/MDDSAT/src/cnf_test.o
 
 # target to build an object file
-solvers/ConflictBasedSearch/conflictbasedsearch.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/conflictbasedsearch.cpp.o
-.PHONY : solvers/ConflictBasedSearch/conflictbasedsearch.cpp.o
+solvers/MDDSAT/src/cnf_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/cnf_test.cpp.o
+.PHONY : solvers/MDDSAT/src/cnf_test.cpp.o
 
-solvers/ConflictBasedSearch/conflictbasedsearch.i: solvers/ConflictBasedSearch/conflictbasedsearch.cpp.i
-.PHONY : solvers/ConflictBasedSearch/conflictbasedsearch.i
+solvers/MDDSAT/src/cnf_test.i: solvers/MDDSAT/src/cnf_test.cpp.i
+.PHONY : solvers/MDDSAT/src/cnf_test.i
 
 # target to preprocess a source file
-solvers/ConflictBasedSearch/conflictbasedsearch.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/conflictbasedsearch.cpp.i
-.PHONY : solvers/ConflictBasedSearch/conflictbasedsearch.cpp.i
+solvers/MDDSAT/src/cnf_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/cnf_test.cpp.i
+.PHONY : solvers/MDDSAT/src/cnf_test.cpp.i
 
-solvers/ConflictBasedSearch/conflictbasedsearch.s: solvers/ConflictBasedSearch/conflictbasedsearch.cpp.s
-.PHONY : solvers/ConflictBasedSearch/conflictbasedsearch.s
+solvers/MDDSAT/src/cnf_test.s: solvers/MDDSAT/src/cnf_test.cpp.s
+.PHONY : solvers/MDDSAT/src/cnf_test.s
 
 # target to generate assembly for a file
-solvers/ConflictBasedSearch/conflictbasedsearch.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/CBS_Library.dir/build.make CMakeFiles/CBS_Library.dir/solvers/ConflictBasedSearch/conflictbasedsearch.cpp.s
-.PHONY : solvers/ConflictBasedSearch/conflictbasedsearch.cpp.s
+solvers/MDDSAT/src/cnf_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/cnf_test.cpp.s
+.PHONY : solvers/MDDSAT/src/cnf_test.cpp.s
+
+solvers/MDDSAT/src/complete.o: solvers/MDDSAT/src/complete.cpp.o
+.PHONY : solvers/MDDSAT/src/complete.o
+
+# target to build an object file
+solvers/MDDSAT/src/complete.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/complete.cpp.o
+.PHONY : solvers/MDDSAT/src/complete.cpp.o
+
+solvers/MDDSAT/src/complete.i: solvers/MDDSAT/src/complete.cpp.i
+.PHONY : solvers/MDDSAT/src/complete.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/complete.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/complete.cpp.i
+.PHONY : solvers/MDDSAT/src/complete.cpp.i
+
+solvers/MDDSAT/src/complete.s: solvers/MDDSAT/src/complete.cpp.s
+.PHONY : solvers/MDDSAT/src/complete.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/complete.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/complete.cpp.s
+.PHONY : solvers/MDDSAT/src/complete.cpp.s
+
+solvers/MDDSAT/src/complete_test.o: solvers/MDDSAT/src/complete_test.cpp.o
+.PHONY : solvers/MDDSAT/src/complete_test.o
+
+# target to build an object file
+solvers/MDDSAT/src/complete_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/complete_test.cpp.o
+.PHONY : solvers/MDDSAT/src/complete_test.cpp.o
+
+solvers/MDDSAT/src/complete_test.i: solvers/MDDSAT/src/complete_test.cpp.i
+.PHONY : solvers/MDDSAT/src/complete_test.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/complete_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/complete_test.cpp.i
+.PHONY : solvers/MDDSAT/src/complete_test.cpp.i
+
+solvers/MDDSAT/src/complete_test.s: solvers/MDDSAT/src/complete_test.cpp.s
+.PHONY : solvers/MDDSAT/src/complete_test.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/complete_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/complete_test.cpp.s
+.PHONY : solvers/MDDSAT/src/complete_test.cpp.s
+
+solvers/MDDSAT/src/compress.o: solvers/MDDSAT/src/compress.cpp.o
+.PHONY : solvers/MDDSAT/src/compress.o
+
+# target to build an object file
+solvers/MDDSAT/src/compress.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/compress.cpp.o
+.PHONY : solvers/MDDSAT/src/compress.cpp.o
+
+solvers/MDDSAT/src/compress.i: solvers/MDDSAT/src/compress.cpp.i
+.PHONY : solvers/MDDSAT/src/compress.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/compress.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/compress.cpp.i
+.PHONY : solvers/MDDSAT/src/compress.cpp.i
+
+solvers/MDDSAT/src/compress.s: solvers/MDDSAT/src/compress.cpp.s
+.PHONY : solvers/MDDSAT/src/compress.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/compress.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/compress.cpp.s
+.PHONY : solvers/MDDSAT/src/compress.cpp.s
+
+solvers/MDDSAT/src/compress_test.o: solvers/MDDSAT/src/compress_test.cpp.o
+.PHONY : solvers/MDDSAT/src/compress_test.o
+
+# target to build an object file
+solvers/MDDSAT/src/compress_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/compress_test.cpp.o
+.PHONY : solvers/MDDSAT/src/compress_test.cpp.o
+
+solvers/MDDSAT/src/compress_test.i: solvers/MDDSAT/src/compress_test.cpp.i
+.PHONY : solvers/MDDSAT/src/compress_test.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/compress_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/compress_test.cpp.i
+.PHONY : solvers/MDDSAT/src/compress_test.cpp.i
+
+solvers/MDDSAT/src/compress_test.s: solvers/MDDSAT/src/compress_test.cpp.s
+.PHONY : solvers/MDDSAT/src/compress_test.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/compress_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/compress_test.cpp.s
+.PHONY : solvers/MDDSAT/src/compress_test.cpp.s
+
+solvers/MDDSAT/src/graph.o: solvers/MDDSAT/src/graph.cpp.o
+.PHONY : solvers/MDDSAT/src/graph.o
+
+# target to build an object file
+solvers/MDDSAT/src/graph.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/graph.cpp.o
+.PHONY : solvers/MDDSAT/src/graph.cpp.o
+
+solvers/MDDSAT/src/graph.i: solvers/MDDSAT/src/graph.cpp.i
+.PHONY : solvers/MDDSAT/src/graph.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/graph.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/graph.cpp.i
+.PHONY : solvers/MDDSAT/src/graph.cpp.i
+
+solvers/MDDSAT/src/graph.s: solvers/MDDSAT/src/graph.cpp.s
+.PHONY : solvers/MDDSAT/src/graph.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/graph.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/graph.cpp.s
+.PHONY : solvers/MDDSAT/src/graph.cpp.s
+
+solvers/MDDSAT/src/gridgen_main.o: solvers/MDDSAT/src/gridgen_main.cpp.o
+.PHONY : solvers/MDDSAT/src/gridgen_main.o
+
+# target to build an object file
+solvers/MDDSAT/src/gridgen_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/gridgen_main.cpp.o
+.PHONY : solvers/MDDSAT/src/gridgen_main.cpp.o
+
+solvers/MDDSAT/src/gridgen_main.i: solvers/MDDSAT/src/gridgen_main.cpp.i
+.PHONY : solvers/MDDSAT/src/gridgen_main.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/gridgen_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/gridgen_main.cpp.i
+.PHONY : solvers/MDDSAT/src/gridgen_main.cpp.i
+
+solvers/MDDSAT/src/gridgen_main.s: solvers/MDDSAT/src/gridgen_main.cpp.s
+.PHONY : solvers/MDDSAT/src/gridgen_main.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/gridgen_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/gridgen_main.cpp.s
+.PHONY : solvers/MDDSAT/src/gridgen_main.cpp.s
+
+solvers/MDDSAT/src/hierarch.o: solvers/MDDSAT/src/hierarch.cpp.o
+.PHONY : solvers/MDDSAT/src/hierarch.o
+
+# target to build an object file
+solvers/MDDSAT/src/hierarch.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/hierarch.cpp.o
+.PHONY : solvers/MDDSAT/src/hierarch.cpp.o
+
+solvers/MDDSAT/src/hierarch.i: solvers/MDDSAT/src/hierarch.cpp.i
+.PHONY : solvers/MDDSAT/src/hierarch.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/hierarch.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/hierarch.cpp.i
+.PHONY : solvers/MDDSAT/src/hierarch.cpp.i
+
+solvers/MDDSAT/src/hierarch.s: solvers/MDDSAT/src/hierarch.cpp.s
+.PHONY : solvers/MDDSAT/src/hierarch.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/hierarch.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/hierarch.cpp.s
+.PHONY : solvers/MDDSAT/src/hierarch.cpp.s
+
+solvers/MDDSAT/src/hierarch_test.o: solvers/MDDSAT/src/hierarch_test.cpp.o
+.PHONY : solvers/MDDSAT/src/hierarch_test.o
+
+# target to build an object file
+solvers/MDDSAT/src/hierarch_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/hierarch_test.cpp.o
+.PHONY : solvers/MDDSAT/src/hierarch_test.cpp.o
+
+solvers/MDDSAT/src/hierarch_test.i: solvers/MDDSAT/src/hierarch_test.cpp.i
+.PHONY : solvers/MDDSAT/src/hierarch_test.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/hierarch_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/hierarch_test.cpp.i
+.PHONY : solvers/MDDSAT/src/hierarch_test.cpp.i
+
+solvers/MDDSAT/src/hierarch_test.s: solvers/MDDSAT/src/hierarch_test.cpp.s
+.PHONY : solvers/MDDSAT/src/hierarch_test.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/hierarch_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/hierarch_test.cpp.s
+.PHONY : solvers/MDDSAT/src/hierarch_test.cpp.s
+
+solvers/MDDSAT/src/hypergen_main.o: solvers/MDDSAT/src/hypergen_main.cpp.o
+.PHONY : solvers/MDDSAT/src/hypergen_main.o
+
+# target to build an object file
+solvers/MDDSAT/src/hypergen_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/hypergen_main.cpp.o
+.PHONY : solvers/MDDSAT/src/hypergen_main.cpp.o
+
+solvers/MDDSAT/src/hypergen_main.i: solvers/MDDSAT/src/hypergen_main.cpp.i
+.PHONY : solvers/MDDSAT/src/hypergen_main.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/hypergen_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/hypergen_main.cpp.i
+.PHONY : solvers/MDDSAT/src/hypergen_main.cpp.i
+
+solvers/MDDSAT/src/hypergen_main.s: solvers/MDDSAT/src/hypergen_main.cpp.s
+.PHONY : solvers/MDDSAT/src/hypergen_main.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/hypergen_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/hypergen_main.cpp.s
+.PHONY : solvers/MDDSAT/src/hypergen_main.cpp.s
+
+solvers/MDDSAT/src/multirobot.o: solvers/MDDSAT/src/multirobot.cpp.o
+.PHONY : solvers/MDDSAT/src/multirobot.o
+
+# target to build an object file
+solvers/MDDSAT/src/multirobot.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/multirobot.cpp.o
+.PHONY : solvers/MDDSAT/src/multirobot.cpp.o
+
+solvers/MDDSAT/src/multirobot.i: solvers/MDDSAT/src/multirobot.cpp.i
+.PHONY : solvers/MDDSAT/src/multirobot.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/multirobot.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/multirobot.cpp.i
+.PHONY : solvers/MDDSAT/src/multirobot.cpp.i
+
+solvers/MDDSAT/src/multirobot.s: solvers/MDDSAT/src/multirobot.cpp.s
+.PHONY : solvers/MDDSAT/src/multirobot.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/multirobot.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/multirobot.cpp.s
+.PHONY : solvers/MDDSAT/src/multirobot.cpp.s
+
+solvers/MDDSAT/src/multirobot_test.o: solvers/MDDSAT/src/multirobot_test.cpp.o
+.PHONY : solvers/MDDSAT/src/multirobot_test.o
+
+# target to build an object file
+solvers/MDDSAT/src/multirobot_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/multirobot_test.cpp.o
+.PHONY : solvers/MDDSAT/src/multirobot_test.cpp.o
+
+solvers/MDDSAT/src/multirobot_test.i: solvers/MDDSAT/src/multirobot_test.cpp.i
+.PHONY : solvers/MDDSAT/src/multirobot_test.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/multirobot_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/multirobot_test.cpp.i
+.PHONY : solvers/MDDSAT/src/multirobot_test.cpp.i
+
+solvers/MDDSAT/src/multirobot_test.s: solvers/MDDSAT/src/multirobot_test.cpp.s
+.PHONY : solvers/MDDSAT/src/multirobot_test.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/multirobot_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/multirobot_test.cpp.s
+.PHONY : solvers/MDDSAT/src/multirobot_test.cpp.s
+
+solvers/MDDSAT/src/netgen_main.o: solvers/MDDSAT/src/netgen_main.cpp.o
+.PHONY : solvers/MDDSAT/src/netgen_main.o
+
+# target to build an object file
+solvers/MDDSAT/src/netgen_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/netgen_main.cpp.o
+.PHONY : solvers/MDDSAT/src/netgen_main.cpp.o
+
+solvers/MDDSAT/src/netgen_main.i: solvers/MDDSAT/src/netgen_main.cpp.i
+.PHONY : solvers/MDDSAT/src/netgen_main.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/netgen_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/netgen_main.cpp.i
+.PHONY : solvers/MDDSAT/src/netgen_main.cpp.i
+
+solvers/MDDSAT/src/netgen_main.s: solvers/MDDSAT/src/netgen_main.cpp.s
+.PHONY : solvers/MDDSAT/src/netgen_main.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/netgen_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/netgen_main.cpp.s
+.PHONY : solvers/MDDSAT/src/netgen_main.cpp.s
+
+solvers/MDDSAT/src/optimizer_main.o: solvers/MDDSAT/src/optimizer_main.cpp.o
+.PHONY : solvers/MDDSAT/src/optimizer_main.o
+
+# target to build an object file
+solvers/MDDSAT/src/optimizer_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/optimizer_main.cpp.o
+.PHONY : solvers/MDDSAT/src/optimizer_main.cpp.o
+
+solvers/MDDSAT/src/optimizer_main.i: solvers/MDDSAT/src/optimizer_main.cpp.i
+.PHONY : solvers/MDDSAT/src/optimizer_main.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/optimizer_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/optimizer_main.cpp.i
+.PHONY : solvers/MDDSAT/src/optimizer_main.cpp.i
+
+solvers/MDDSAT/src/optimizer_main.s: solvers/MDDSAT/src/optimizer_main.cpp.s
+.PHONY : solvers/MDDSAT/src/optimizer_main.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/optimizer_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/optimizer_main.cpp.s
+.PHONY : solvers/MDDSAT/src/optimizer_main.cpp.s
+
+solvers/MDDSAT/src/reloc.o: solvers/MDDSAT/src/reloc.cpp.o
+.PHONY : solvers/MDDSAT/src/reloc.o
+
+# target to build an object file
+solvers/MDDSAT/src/reloc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/reloc.cpp.o
+.PHONY : solvers/MDDSAT/src/reloc.cpp.o
+
+solvers/MDDSAT/src/reloc.i: solvers/MDDSAT/src/reloc.cpp.i
+.PHONY : solvers/MDDSAT/src/reloc.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/reloc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/reloc.cpp.i
+.PHONY : solvers/MDDSAT/src/reloc.cpp.i
+
+solvers/MDDSAT/src/reloc.s: solvers/MDDSAT/src/reloc.cpp.s
+.PHONY : solvers/MDDSAT/src/reloc.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/reloc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/reloc.cpp.s
+.PHONY : solvers/MDDSAT/src/reloc.cpp.s
+
+solvers/MDDSAT/src/reloc_test.o: solvers/MDDSAT/src/reloc_test.cpp.o
+.PHONY : solvers/MDDSAT/src/reloc_test.o
+
+# target to build an object file
+solvers/MDDSAT/src/reloc_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/reloc_test.cpp.o
+.PHONY : solvers/MDDSAT/src/reloc_test.cpp.o
+
+solvers/MDDSAT/src/reloc_test.i: solvers/MDDSAT/src/reloc_test.cpp.i
+.PHONY : solvers/MDDSAT/src/reloc_test.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/reloc_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/reloc_test.cpp.i
+.PHONY : solvers/MDDSAT/src/reloc_test.cpp.i
+
+solvers/MDDSAT/src/reloc_test.s: solvers/MDDSAT/src/reloc_test.cpp.s
+.PHONY : solvers/MDDSAT/src/reloc_test.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/reloc_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/reloc_test.cpp.s
+.PHONY : solvers/MDDSAT/src/reloc_test.cpp.s
+
+solvers/MDDSAT/src/resolver_main.o: solvers/MDDSAT/src/resolver_main.cpp.o
+.PHONY : solvers/MDDSAT/src/resolver_main.o
+
+# target to build an object file
+solvers/MDDSAT/src/resolver_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/resolver_main.cpp.o
+.PHONY : solvers/MDDSAT/src/resolver_main.cpp.o
+
+solvers/MDDSAT/src/resolver_main.i: solvers/MDDSAT/src/resolver_main.cpp.i
+.PHONY : solvers/MDDSAT/src/resolver_main.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/resolver_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/resolver_main.cpp.i
+.PHONY : solvers/MDDSAT/src/resolver_main.cpp.i
+
+solvers/MDDSAT/src/resolver_main.s: solvers/MDDSAT/src/resolver_main.cpp.s
+.PHONY : solvers/MDDSAT/src/resolver_main.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/resolver_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/resolver_main.cpp.s
+.PHONY : solvers/MDDSAT/src/resolver_main.cpp.s
+
+solvers/MDDSAT/src/search.o: solvers/MDDSAT/src/search.cpp.o
+.PHONY : solvers/MDDSAT/src/search.o
+
+# target to build an object file
+solvers/MDDSAT/src/search.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/search.cpp.o
+.PHONY : solvers/MDDSAT/src/search.cpp.o
+
+solvers/MDDSAT/src/search.i: solvers/MDDSAT/src/search.cpp.i
+.PHONY : solvers/MDDSAT/src/search.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/search.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/search.cpp.i
+.PHONY : solvers/MDDSAT/src/search.cpp.i
+
+solvers/MDDSAT/src/search.s: solvers/MDDSAT/src/search.cpp.s
+.PHONY : solvers/MDDSAT/src/search.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/search.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/search.cpp.s
+.PHONY : solvers/MDDSAT/src/search.cpp.s
+
+solvers/MDDSAT/src/simplify_main.o: solvers/MDDSAT/src/simplify_main.cpp.o
+.PHONY : solvers/MDDSAT/src/simplify_main.o
+
+# target to build an object file
+solvers/MDDSAT/src/simplify_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/simplify_main.cpp.o
+.PHONY : solvers/MDDSAT/src/simplify_main.cpp.o
+
+solvers/MDDSAT/src/simplify_main.i: solvers/MDDSAT/src/simplify_main.cpp.i
+.PHONY : solvers/MDDSAT/src/simplify_main.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/simplify_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/simplify_main.cpp.i
+.PHONY : solvers/MDDSAT/src/simplify_main.cpp.i
+
+solvers/MDDSAT/src/simplify_main.s: solvers/MDDSAT/src/simplify_main.cpp.s
+.PHONY : solvers/MDDSAT/src/simplify_main.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/simplify_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/simplify_main.cpp.s
+.PHONY : solvers/MDDSAT/src/simplify_main.cpp.s
+
+solvers/MDDSAT/src/solver_main.o: solvers/MDDSAT/src/solver_main.cpp.o
+.PHONY : solvers/MDDSAT/src/solver_main.o
+
+# target to build an object file
+solvers/MDDSAT/src/solver_main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/solver_main.cpp.o
+.PHONY : solvers/MDDSAT/src/solver_main.cpp.o
+
+solvers/MDDSAT/src/solver_main.i: solvers/MDDSAT/src/solver_main.cpp.i
+.PHONY : solvers/MDDSAT/src/solver_main.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/solver_main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/solver_main.cpp.i
+.PHONY : solvers/MDDSAT/src/solver_main.cpp.i
+
+solvers/MDDSAT/src/solver_main.s: solvers/MDDSAT/src/solver_main.cpp.s
+.PHONY : solvers/MDDSAT/src/solver_main.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/solver_main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/solver_main.cpp.s
+.PHONY : solvers/MDDSAT/src/solver_main.cpp.s
+
+solvers/MDDSAT/src/statistics.o: solvers/MDDSAT/src/statistics.cpp.o
+.PHONY : solvers/MDDSAT/src/statistics.o
+
+# target to build an object file
+solvers/MDDSAT/src/statistics.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/statistics.cpp.o
+.PHONY : solvers/MDDSAT/src/statistics.cpp.o
+
+solvers/MDDSAT/src/statistics.i: solvers/MDDSAT/src/statistics.cpp.i
+.PHONY : solvers/MDDSAT/src/statistics.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/statistics.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/statistics.cpp.i
+.PHONY : solvers/MDDSAT/src/statistics.cpp.i
+
+solvers/MDDSAT/src/statistics.s: solvers/MDDSAT/src/statistics.cpp.s
+.PHONY : solvers/MDDSAT/src/statistics.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/statistics.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/statistics.cpp.s
+.PHONY : solvers/MDDSAT/src/statistics.cpp.s
+
+solvers/MDDSAT/src/types.o: solvers/MDDSAT/src/types.cpp.o
+.PHONY : solvers/MDDSAT/src/types.o
+
+# target to build an object file
+solvers/MDDSAT/src/types.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/types.cpp.o
+.PHONY : solvers/MDDSAT/src/types.cpp.o
+
+solvers/MDDSAT/src/types.i: solvers/MDDSAT/src/types.cpp.i
+.PHONY : solvers/MDDSAT/src/types.i
+
+# target to preprocess a source file
+solvers/MDDSAT/src/types.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/types.cpp.i
+.PHONY : solvers/MDDSAT/src/types.cpp.i
+
+solvers/MDDSAT/src/types.s: solvers/MDDSAT/src/types.cpp.s
+.PHONY : solvers/MDDSAT/src/types.s
+
+# target to generate assembly for a file
+solvers/MDDSAT/src/types.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MDDSAT_Library.dir/build.make CMakeFiles/MDDSAT_Library.dir/solvers/MDDSAT/src/types.cpp.s
+.PHONY : solvers/MDDSAT/src/types.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -692,7 +1196,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... CBSH2_Library"
-	@echo "... CBS_Library"
+	@echo "... MDDSAT_Library"
 	@echo "... MyApp"
 	@echo "... solvers/CBSH2-RTC/src/CBS.o"
 	@echo "... solvers/CBSH2-RTC/src/CBS.i"
@@ -745,18 +1249,81 @@ help:
 	@echo "... solvers/CBSH2-RTC/src/common.o"
 	@echo "... solvers/CBSH2-RTC/src/common.i"
 	@echo "... solvers/CBSH2-RTC/src/common.s"
-	@echo "... solvers/ConflictBasedSearch/HighLevelSolver.o"
-	@echo "... solvers/ConflictBasedSearch/HighLevelSolver.i"
-	@echo "... solvers/ConflictBasedSearch/HighLevelSolver.s"
-	@echo "... solvers/ConflictBasedSearch/LowLevelSolver.o"
-	@echo "... solvers/ConflictBasedSearch/LowLevelSolver.i"
-	@echo "... solvers/ConflictBasedSearch/LowLevelSolver.s"
-	@echo "... solvers/ConflictBasedSearch/TreeNode.o"
-	@echo "... solvers/ConflictBasedSearch/TreeNode.i"
-	@echo "... solvers/ConflictBasedSearch/TreeNode.s"
-	@echo "... solvers/ConflictBasedSearch/conflictbasedsearch.o"
-	@echo "... solvers/ConflictBasedSearch/conflictbasedsearch.i"
-	@echo "... solvers/ConflictBasedSearch/conflictbasedsearch.s"
+	@echo "... solvers/MDDSAT/src/alldiff_test.o"
+	@echo "... solvers/MDDSAT/src/alldiff_test.i"
+	@echo "... solvers/MDDSAT/src/alldiff_test.s"
+	@echo "... solvers/MDDSAT/src/autooptim_main.o"
+	@echo "... solvers/MDDSAT/src/autooptim_main.i"
+	@echo "... solvers/MDDSAT/src/autooptim_main.s"
+	@echo "... solvers/MDDSAT/src/cnf.o"
+	@echo "... solvers/MDDSAT/src/cnf.i"
+	@echo "... solvers/MDDSAT/src/cnf.s"
+	@echo "... solvers/MDDSAT/src/cnf_test.o"
+	@echo "... solvers/MDDSAT/src/cnf_test.i"
+	@echo "... solvers/MDDSAT/src/cnf_test.s"
+	@echo "... solvers/MDDSAT/src/complete.o"
+	@echo "... solvers/MDDSAT/src/complete.i"
+	@echo "... solvers/MDDSAT/src/complete.s"
+	@echo "... solvers/MDDSAT/src/complete_test.o"
+	@echo "... solvers/MDDSAT/src/complete_test.i"
+	@echo "... solvers/MDDSAT/src/complete_test.s"
+	@echo "... solvers/MDDSAT/src/compress.o"
+	@echo "... solvers/MDDSAT/src/compress.i"
+	@echo "... solvers/MDDSAT/src/compress.s"
+	@echo "... solvers/MDDSAT/src/compress_test.o"
+	@echo "... solvers/MDDSAT/src/compress_test.i"
+	@echo "... solvers/MDDSAT/src/compress_test.s"
+	@echo "... solvers/MDDSAT/src/graph.o"
+	@echo "... solvers/MDDSAT/src/graph.i"
+	@echo "... solvers/MDDSAT/src/graph.s"
+	@echo "... solvers/MDDSAT/src/gridgen_main.o"
+	@echo "... solvers/MDDSAT/src/gridgen_main.i"
+	@echo "... solvers/MDDSAT/src/gridgen_main.s"
+	@echo "... solvers/MDDSAT/src/hierarch.o"
+	@echo "... solvers/MDDSAT/src/hierarch.i"
+	@echo "... solvers/MDDSAT/src/hierarch.s"
+	@echo "... solvers/MDDSAT/src/hierarch_test.o"
+	@echo "... solvers/MDDSAT/src/hierarch_test.i"
+	@echo "... solvers/MDDSAT/src/hierarch_test.s"
+	@echo "... solvers/MDDSAT/src/hypergen_main.o"
+	@echo "... solvers/MDDSAT/src/hypergen_main.i"
+	@echo "... solvers/MDDSAT/src/hypergen_main.s"
+	@echo "... solvers/MDDSAT/src/multirobot.o"
+	@echo "... solvers/MDDSAT/src/multirobot.i"
+	@echo "... solvers/MDDSAT/src/multirobot.s"
+	@echo "... solvers/MDDSAT/src/multirobot_test.o"
+	@echo "... solvers/MDDSAT/src/multirobot_test.i"
+	@echo "... solvers/MDDSAT/src/multirobot_test.s"
+	@echo "... solvers/MDDSAT/src/netgen_main.o"
+	@echo "... solvers/MDDSAT/src/netgen_main.i"
+	@echo "... solvers/MDDSAT/src/netgen_main.s"
+	@echo "... solvers/MDDSAT/src/optimizer_main.o"
+	@echo "... solvers/MDDSAT/src/optimizer_main.i"
+	@echo "... solvers/MDDSAT/src/optimizer_main.s"
+	@echo "... solvers/MDDSAT/src/reloc.o"
+	@echo "... solvers/MDDSAT/src/reloc.i"
+	@echo "... solvers/MDDSAT/src/reloc.s"
+	@echo "... solvers/MDDSAT/src/reloc_test.o"
+	@echo "... solvers/MDDSAT/src/reloc_test.i"
+	@echo "... solvers/MDDSAT/src/reloc_test.s"
+	@echo "... solvers/MDDSAT/src/resolver_main.o"
+	@echo "... solvers/MDDSAT/src/resolver_main.i"
+	@echo "... solvers/MDDSAT/src/resolver_main.s"
+	@echo "... solvers/MDDSAT/src/search.o"
+	@echo "... solvers/MDDSAT/src/search.i"
+	@echo "... solvers/MDDSAT/src/search.s"
+	@echo "... solvers/MDDSAT/src/simplify_main.o"
+	@echo "... solvers/MDDSAT/src/simplify_main.i"
+	@echo "... solvers/MDDSAT/src/simplify_main.s"
+	@echo "... solvers/MDDSAT/src/solver_main.o"
+	@echo "... solvers/MDDSAT/src/solver_main.i"
+	@echo "... solvers/MDDSAT/src/solver_main.s"
+	@echo "... solvers/MDDSAT/src/statistics.o"
+	@echo "... solvers/MDDSAT/src/statistics.i"
+	@echo "... solvers/MDDSAT/src/statistics.s"
+	@echo "... solvers/MDDSAT/src/types.o"
+	@echo "... solvers/MDDSAT/src/types.i"
+	@echo "... solvers/MDDSAT/src/types.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

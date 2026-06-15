@@ -1,9 +1,11 @@
 #include <algorithm>    // std::shuffle
 #include <random>      // std::default_random_engine
 #include <chrono>       // std::chrono::system_clock
+#include <sstream>
 #include "CBS.h"
 #include "SIPP.h"
 #include "SpaceTimeAStar.h"
+
 
 
 // takes the paths_found_initially and UPDATE all (constrained) paths found for agents from curr to start
@@ -689,6 +691,24 @@ void CBS::savePaths(const string &fileName) const
         output << endl;
     }
     output.close();
+}
+
+std::string CBS::writePaths() const 
+{
+    std::stringstream output; 
+
+    for (int i = 0; i < num_of_agents; i++)
+    {
+        // Notice we use << exactly like you did with ofstream
+        output << "Agent " << i << ": ";
+        for (const auto & t : *paths[i])
+            output << "(" << search_engines[0]->instance.getRowCoordinate(t.location)
+                   << "," << search_engines[0]->instance.getColCoordinate(t.location) << ")->";
+        output << std::endl;
+    }
+
+    // Convert the stream to a standard string and return it
+    return output.str();
 }
 
 void CBS::printConflicts(const CBSNode &curr)

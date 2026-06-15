@@ -23,6 +23,7 @@
 #include <stdlib.h>
 #include <sys/times.h>
 #include <unistd.h>
+#include <string>
 
 #include "config.h"
 #include "compile.h"
@@ -35,6 +36,7 @@
 #include "search.h"
 
 #include "solver_main.h"
+#include <iostream>
 
 
 using namespace sReloc;
@@ -111,26 +113,26 @@ namespace sReloc
     }
 
 
-sResult solve_MultirobotInstance_SAT(const sCommandParameters &command_parameters)
+std::string solve_MultirobotInstance_SAT(const sCommandParameters &command_parameters)
     {
 	sUndirectedGraph environment;
 
 	printf("Reading graph...\n");
-	sResult result = environment.from_File_multirobot(command_parameters.m_input_filename);
+	sResult result = environment.from_String_multirobot(command_parameters.m_input_filename);
 	if (sFAILED(result))
 	{
 	    printf("Error: Reading graph from file %s failed (code = %d).\n", command_parameters.m_input_filename.c_str(), result);
-	    return result;
+	    return "error";
 	}
 	printf("Reading graph... FINISHED\n");
 
 	printf("Reading initial arrangement...\n");
 	sRobotArrangement initial_arrangement;
-	result = initial_arrangement.from_File_multirobot(command_parameters.m_input_filename);
+	result = initial_arrangement.from_String_multirobot(command_parameters.m_input_filename);
 	if (sFAILED(result))
 	{
 	    printf("Error: Reading arrangement from file %s failed (code = %d).\n", command_parameters.m_input_filename.c_str(), result);
-	    return result;
+	    return "error";
 	}
 	printf("Reading initial arrangement... FINISHED.\n");
 
@@ -138,18 +140,18 @@ sResult solve_MultirobotInstance_SAT(const sCommandParameters &command_parameter
 	sRobotArrangement goal_arrangement;
 	sRobotGoal robot_goal;
 
-	result = goal_arrangement.from_File_multirobot(command_parameters.m_input_filename, 2);
+	result = goal_arrangement.from_String_multirobot(command_parameters.m_input_filename, 2);
 	if (sFAILED(result))
 	{
-	    printf("Error: Reading arrangement from file %s failed (code = %d).\n", command_parameters.m_input_filename.c_str(), result);
-	    return result;
+	    printf("ERROR");
+	    return "error";
 	}
 
-	result = robot_goal.from_File_multirobot(command_parameters.m_input_filename, 2);
+	result = robot_goal.from_String_multirobot(command_parameters.m_input_filename, 2);
 	if (sFAILED(result))
 	{
-	    printf("Error: Reading arrangement from file %s failed (code = %d).\n", command_parameters.m_input_filename.c_str(), result);
-	    return result;
+		printf("FAILED GOAL ALLOC");
+	    return "error";
 	}
 	printf("Reading goal arrangement... FINISHED.\n");
 
@@ -169,15 +171,19 @@ sResult solve_MultirobotInstance_SAT(const sCommandParameters &command_parameter
 	sMultirobotInstance instance(environment, initial_arrangement, robot_goal);
 	sMultirobotInstance instance_whca(environment, initial_arrangement, goal_arrangement);
 	printf("Building instance... FINISHED.\n");
-
+	printf("rEading:");
+	printf("%s\n", command_parameters.m_pddl_problem_filename.c_str());
+	printf("%s\n", command_parameters.m_pddl_problem_filename.empty() ? "true" : "false");
 	if (!command_parameters.m_pddl_problem_filename.empty())
 	{
+		
 	    result = instance.to_File_problemPDDL(command_parameters.m_pddl_problem_filename);
 
 	    if (sFAILED(result))
 	    {
-		printf("Error: Failed to write PDDL problem file %s (code = %d).\n", command_parameters.m_pddl_problem_filename.c_str(), result);
-		return result;
+
+		printf("ERROR WITH INSTANCE TO FILE PROBLEM PDDL");
+		return "error";
 	    }
 	}
 	if (!command_parameters.m_pddl_domain_filename.empty())
@@ -187,7 +193,7 @@ sResult solve_MultirobotInstance_SAT(const sCommandParameters &command_parameter
 	    if (sFAILED(result))
 	    {
 		printf("Error: Failed to write PDDL domain file %s (code = %d).\n", command_parameters.m_pddl_domain_filename.c_str(), result);
-		return result;
+		return "error";
 	    }
 	}
 
@@ -205,11 +211,16 @@ sResult solve_MultirobotInstance_SAT(const sCommandParameters &command_parameter
 
 	if (!command_parameters.m_output_filename.empty())
 	{
+		printf("here");
 	    int optimal_makespan, optimal_cost;
+		
+		printf("we are doing this: 1");
 	    sMultirobotSolution optimal_solution;
 	    
+		printf("we are doing this: 2");
 	    if (command_parameters.m_completion == sCommandParameters::COMPLETION_UNIROBOT)
 	    {
+		printf("we are doing this: 3");
 		sASSERT(command_parameters.m_cnf_encoding == sMultirobotSolutionCompressor::ENCODING_PLURAL2 || command_parameters.m_cnf_encoding == sMultirobotSolutionCompressor::ENCODING_PLURAL)
 
 		sMultirobotSolutionCompressor compressor("../../sat/glucose3"/*"../../sat/minisat_static" , "../../sat/glucose_static"*/,
@@ -218,7 +229,8 @@ sResult solve_MultirobotInstance_SAT(const sCommandParameters &command_parameter
 							 command_parameters.m_makespan_upper_bound,
 							 sDEFAULT_N_PARALLEL_THREADS,
 							 command_parameters.m_cnf_encoding);	    
-		
+		printf("we are doing now this: ");
+
 		result = compressor.compute_UnirobotsSolution(initial_arrangement,
 							      robot_goal,
 							      environment,
@@ -613,7 +625,7 @@ sResult solve_MultirobotInstance_SAT(const sCommandParameters &command_parameter
 			if (sFAILED(result))
 			{
 			    printf("Error: Solution optimization failed (code = %d).\n", result);
-			    return result;
+			    return "error";
 			}
 			printf("Computed optimal makespan:%d\n", optimal_makespan);
 			printf("Makespan optimal solution:\n");
@@ -697,15 +709,17 @@ sResult solve_MultirobotInstance_SAT(const sCommandParameters &command_parameter
 	    sMultirobotSolutionAnalyzer solution_analyzer;
 	    solution_analyzer.analyze_Solution(optimal_solution, initial_arrangement, environment);
 	    solution_analyzer.to_Screen();
+	return optimal_solution.to_String();
 	}
 	s_GlobalPhaseStatistics.to_Screen();
 
-	return sRESULT_SUCCESS;
+	return "empty"; // returning result. 
     }
 
 
     sResult parse_CommandLineParameter(const sString &parameter, sCommandParameters &command_parameters)
     {
+	
 	if (parameter.find("--input-file=") == 0)
 	{
 	    command_parameters.m_input_filename = parameter.substr(13, parameter.size());
@@ -1002,6 +1016,31 @@ sResult solve_MultirobotInstance_SAT(const sCommandParameters &command_parameter
 
 /*----------------------------------------------------------------------------*/
 // main program
+
+
+std::string sReloc::MDDSATSolver(int argc, char **argv)
+{
+    sResult result;
+    sCommandParameters command_parameters;
+
+    print_IntroductoryMessage();
+
+    if (argc >= 2 && argc <= 9)
+    {
+	for (int i = 1; i < argc; ++i)
+	{
+	    result = parse_CommandLineParameter(argv[i], command_parameters);
+		
+	    if (sFAILED(result))
+	    {
+		printf("Error: Cannot parse command line parameters (code = %d).\n", result);
+		print_Help();
+		return "error";
+	    }
+	}
+	return solve_MultirobotInstance_SAT(command_parameters);}
+	return "ERROR";
+}
 
 /*
 int main(int argc, char **argv)
