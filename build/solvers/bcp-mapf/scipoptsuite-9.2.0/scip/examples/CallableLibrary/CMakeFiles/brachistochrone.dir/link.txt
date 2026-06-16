@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG  -ldl CMakeFiles/brachistochrone.dir/src/brachistochrone.c.o -o ../../bin/examples/brachistochrone  -Wl,-rpath,/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/lib ../../lib/libscip.so.9.2.0.0 -lm 

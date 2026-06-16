@@ -6,5 +6,5 @@ CXX_DEFINES = -DBOOST_ATOMIC_DYN_LINK -DBOOST_ATOMIC_NO_LIB -DBOOST_FILESYSTEM_D
 
 CXX_INCLUDES = -I/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/CBSH2-RTC/inc
 
-CXX_FLAGS = -std=gnu++17 -fPIC
+CXX_FLAGS = -O3 -DNDEBUG -flto -std=gnu++17 -fPIC
 

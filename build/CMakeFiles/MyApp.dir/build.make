@@ -92,8 +92,11 @@ MyApp_EXTERNAL_OBJECTS =
 
 MyApp: CMakeFiles/MyApp.dir/src/main.cpp.o
 MyApp: CMakeFiles/MyApp.dir/build.make
+MyApp: libBCP_MAPF_Library.a
 MyApp: libCBSH2_Library.a
 MyApp: libMDDSAT_Library.a
+MyApp: solvers/bcp-mapf/scipoptsuite-9.2.0/scip/lib/libscip.so.9.2.0.0
+MyApp: /usr/lib/x86_64-linux-gnu/libm.so
 MyApp: /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.83.0
 MyApp: /usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0
 MyApp: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so.1.83.0

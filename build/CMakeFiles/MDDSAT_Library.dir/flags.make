@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = 
 
-CXX_FLAGS = -std=gnu++17 -fPIC
+CXX_FLAGS = -O3 -DNDEBUG -flto -std=gnu++17 -fPIC
 
