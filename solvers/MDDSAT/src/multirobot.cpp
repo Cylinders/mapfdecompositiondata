@@ -15894,7 +15894,7 @@ namespace sReloc
     }
 
 	std::string sMultirobotSolution::to_String() const
-{
+	{
     std::ostringstream oss;
     
     // Calculate parallelism (added a safeguard against division by zero)
@@ -15922,7 +15922,7 @@ namespace sReloc
     oss << "]\n";
 
     return oss.str();
-}
+	}
 
     void sMultirobotSolution::to_Stream(FILE *fw, const sString &indent) const
     {
