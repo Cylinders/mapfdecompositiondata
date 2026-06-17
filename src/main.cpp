@@ -28,6 +28,7 @@
 #include "search.h"
 
 #include "solver_main.h"
+#include "solver.h"
 //ALGORITHM ONE: CBS
 using namespace std;
 
@@ -210,9 +211,29 @@ string algorithmTwo(const string& mapFilePath, const string& scenFilePath) {
 
 // ALGORITHM 3: BCP
 
-string algorithmThree(const string& input) {
-    // TODO: Implement your third string logic here
-    return "Result 3: " + input;
+std::string algorithmThree(const std::string& input) {
+    // 1. Setup the fake command line arguments
+    std::string programName = "bcp-mapf"; // Dummy program name (equivalent to argv[0])
+    
+    // Create mutable char buffers for the arguments
+    std::vector<char> arg0(programName.begin(), programName.end());
+    arg0.push_back('\0'); // Null-terminate
+    
+    std::vector<char> arg1(input.begin(), input.end());
+    arg1.push_back('\0'); // Null-terminate
+    
+    // 2. Build the argv array
+    std::vector<char*> argv_vec;
+    argv_vec.push_back(arg0.data()); // argv[0]
+    argv_vec.push_back(arg1.data()); // argv[1]
+    argv_vec.push_back(nullptr);     // POSIX standard expects argv to be null-terminated
+    
+    int argc = 2;
+    char** argv = argv_vec.data();
+
+    // 3. Call your solver
+    return start_solver(argc, argv);
+     
 }
 
 // ALGORITHM 3: MDD SAT
@@ -254,13 +275,13 @@ int main(int argc, char* argv[]) {
     string mapFile = "../originalmaps/lak103d.map";
     string scenFile = "../originalscen/lak103d.map.scen";
     string myInput = "PathfindingTest";
-    cout << readMapAndScenFiles(mapFile, scenFile);
+    // cout << readMapAndScenFiles(mapFile, scenFile);
 
     // Now algorithmOne takes the two file paths!
-    cout << algorithmOne(mapFile, scenFile) << "\n";
+    // cout << algorithmOne(mapFile, scenFile) << "\n";
 
     // cout << algorithmTwo(myInput) << "\n";
-    //  cout << algorithmThree(myInput) << "\n";
+    cout << algorithmThree("/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/originalscen/lak103d.map.scen") << "\n";
     
     // cout << algorithmFour(readMapAndScenFiles(mapFile, scenFile)) << "\n";
 
