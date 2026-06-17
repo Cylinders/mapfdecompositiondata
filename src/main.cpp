@@ -232,7 +232,7 @@ std::string algorithmThree(const std::string& input) {
     char** argv = argv_vec.data();
 
     // 3. Call your solver
-    return start_solver(argc, argv);
+    return returnSol(argc, argv);
      
 }
 
@@ -281,7 +281,7 @@ int main(int argc, char* argv[]) {
     // cout << algorithmOne(mapFile, scenFile) << "\n";
 
     // cout << algorithmTwo(myInput) << "\n";
-    cout << algorithmThree("/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/originalscen/lak103d.map.scen") << "\n";
+    cout << algorithmThree("../solvers/bcp-mapf/instances/warehouse_extended/10x30-w5-0.scen") << "\n";
     
     // cout << algorithmFour(readMapAndScenFiles(mapFile, scenFile)) << "\n";
 
