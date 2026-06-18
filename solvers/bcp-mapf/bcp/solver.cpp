@@ -376,8 +376,8 @@ SCIP_RETCODE start_solver(
     }
 
     // Free memory.
-    SCIP_CALL(SCIPfree(&scip));
-
+    // SCIP_CALL(SCIPfree(&scip));
+    
     // Check if memory is leaked.
     BMScheckEmptyMemory();
 
