@@ -17,6 +17,8 @@ along with BCP-MAPF.  If not, see <https://www.gnu.org/licenses/>.
 Author: Edward Lam <ed@ed-lam.com>
 */
 
+#include <iostream>
+
 #include "problem/includes.h"
 #include "problem/reader.h"
 #include "problem/output.h"
@@ -377,7 +379,6 @@ SCIP_RETCODE start_solver(
 
     // Free memory.
     // SCIP_CALL(SCIPfree(&scip));
-    
     // Check if memory is leaked.
     BMScheckEmptyMemory();
 
@@ -390,7 +391,9 @@ std::string returnSol(int argc, char** argv) {
     
     // Pass returnString by reference so start_solver can populate it
     SCIP_RETCODE retcode = start_solver(argc, argv, returnString);
-    
+
+    std::cout << "GOT HERE\n";
+
     // Optional: If you want to check for errors, you can inspect 'retcode' here.
     if (retcode != SCIP_OKAY) {
         // You might want to log SCIPprintError(retcode) here if needed.

@@ -153,26 +153,30 @@ else ()
     set(SCIP_LIBRARY libscip)
 endif ()
 
-# Fetch Boost headers (if custom download is still desired for bcp-mapf)
-set(BOOST_VERSION 1.87.0)
-message(STATUS "Downloading Boost libraries for BCP-MAPF")
-include(FetchContent)
-FetchContent_Declare(boost
-    URL https://github.com/boostorg/boost/releases/download/boost-${BOOST_VERSION}/boost-${BOOST_VERSION}-b2-nodocs.tar.gz
-    DOWNLOAD_EXTRACT_TIMESTAMP TRUE)
-FetchContent_MakeAvailable(boost)
-set(BOOST_FETCH_INCLUDE_DIR "${boost_SOURCE_DIR}")
-message("Downloaded Custom Boost to ${boost_SOURCE_DIR}")
+## Fetch Boost headers (if custom download is still desired for bcp-mapf)
+#set(BOOST_VERSION 1.87.0)
+#message(STATUS "Downloading Boost libraries for BCP-MAPF")
+#include(FetchContent)
+#FetchContent_Declare(boost
+#    URL https://github.com/boostorg/boost/releases/download/boost-${BOOST_VERSION}/boost-${BOOST_VERSION}-b2-nodocs.tar.gz
+#    DOWNLOAD_EXTRACT_TIMESTAMP TRUE)
+#FetchContent_MakeAvailable(boost)
+#set(BOOST_FETCH_INCLUDE_DIR "${boost_SOURCE_DIR}")
+#message("Downloaded Custom Boost to ${boost_SOURCE_DIR}")
 
 # BCP-MAPF specific libraries/includes
 add_subdirectory(${BCP_DIR}/fmt EXCLUDE_FROM_ALL)
 target_include_directories(BCP_MAPF_Library PUBLIC ${BCP_DIR}/fmt/include/)
 target_include_directories(BCP_MAPF_Library PUBLIC ${BCP_DIR}/cxxopts/include/)
 target_include_directories(BCP_MAPF_Library PUBLIC ${BCP_DIR}/robin-hood-hashing/src/include/)
-target_include_directories(BCP_MAPF_Library PUBLIC ${BOOST_FETCH_INCLUDE_DIR})
+target_include_directories(BCP_MAPF_Library PUBLIC ${Boost_INCLUDE_DIRS})
 
-target_link_libraries(BCP_MAPF_Library PUBLIC fmt::fmt-header-only ${SCIP_LIBRARY} ${LIBM})
-
+target_link_libraries(BCP_MAPF_Library PUBLIC
+        Boost::headers
+        fmt::fmt-header-only
+        ${SCIP_LIBRARY}
+        ${LIBM}
+)
 # BCP-MAPF Compile Options
 target_compile_options(BCP_MAPF_Library PRIVATE 
     -DUSE_RESERVATION_TABLE -DUSE_ASTAR_SOLUTION_CACHING
@@ -234,15 +238,35 @@ add_library(MDDSAT_Library STATIC ${MDDSAT_SOURCES})
 # =======================================================
 # MAIN APPLICATION
 # =======================================================
-add_executable(MyApp src/main.cpp)
 
-target_include_directories(MyApp PRIVATE 
-    "${CMAKE_CURRENT_SOURCE_DIR}/solvers/MDDSAT/src"
+add_library(mapf-solvers STATIC
+        src/api.cpp
 )
 
-# Link ALL libraries to your app
-target_link_libraries(MyApp PRIVATE 
-    BCP_MAPF_Library 
-    CBSH2_Library 
-    MDDSAT_Library
+target_link_libraries(mapf-solvers PUBLIC
+        BCP_MAPF_Library
+        CBSH2_Library
+        MDDSAT_Library
 )
+
+target_include_directories(mapf-solvers
+        PUBLIC
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
+        PRIVATE
+        "${CMAKE_CURRENT_SOURCE_DIR}/solvers/MDDSAT/src"
+)
+
+option(MAPF_BUILD_APP "standalone app" OFF)
+
+if (MAPF_BUILD_APP)
+    add_executable(MyApp src/main.cpp)
+    target_link_libraries(MyApp PRIVATE
+            BCP_MAPF_Library
+            CBSH2_Library
+            MDDSAT_Library
+    )
+    target_include_directories(MyApp PRIVATE
+            "${CMAKE_CURRENT_SOURCE_DIR}/solvers/MDDSAT/src"
+    )
+endif()
+
