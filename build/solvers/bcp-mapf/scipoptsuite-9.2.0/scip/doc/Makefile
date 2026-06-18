@@ -181,6 +181,20 @@ depend:
 	cd /home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+# Convenience name for target.
+solvers/bcp-mapf/scipoptsuite-9.2.0/scip/doc/CMakeFiles/doc.dir/rule:
+	cd /home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 solvers/bcp-mapf/scipoptsuite-9.2.0/scip/doc/CMakeFiles/doc.dir/rule
+.PHONY : solvers/bcp-mapf/scipoptsuite-9.2.0/scip/doc/CMakeFiles/doc.dir/rule
+
+# Convenience name for target.
+doc: solvers/bcp-mapf/scipoptsuite-9.2.0/scip/doc/CMakeFiles/doc.dir/rule
+.PHONY : doc
+
+# fast build rule for target.
+doc/fast:
+	cd /home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build && $(MAKE) $(MAKESILENT) -f solvers/bcp-mapf/scipoptsuite-9.2.0/scip/doc/CMakeFiles/doc.dir/build.make solvers/bcp-mapf/scipoptsuite-9.2.0/scip/doc/CMakeFiles/doc.dir/build
+.PHONY : doc/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -195,6 +209,7 @@ help:
 	@echo "... package"
 	@echo "... package_source"
 	@echo "... rebuild_cache"
+	@echo "... doc"
 .PHONY : help
 
 

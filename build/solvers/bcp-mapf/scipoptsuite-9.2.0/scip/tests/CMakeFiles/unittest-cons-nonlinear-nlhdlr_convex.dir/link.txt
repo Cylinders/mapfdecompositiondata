@@ -1,0 +1,1 @@
+/usr/bin/cc -O3 -DNDEBUG  -ldl "CMakeFiles/unittest-cons-nonlinear-nlhdlr_convex.dir/src/cons/nonlinear/nlhdlr_convex.c.o" -o cons/nonlinear/unittest-cons-nonlinear-nlhdlr_convex  -Wl,-rpath,/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/lib /usr/lib/x86_64-linux-gnu/libcriterion.so ../lib/libscip.so.9.2.0.0 -lm 

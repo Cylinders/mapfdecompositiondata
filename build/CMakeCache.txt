@@ -386,10 +386,10 @@ CPLEX_INCLUDE_DIR:PATH=CPLEX_INCLUDE_DIR-NOTFOUND
 CPLEX_LIBRARY:FILEPATH=CPLEX_LIBRARY-NOTFOUND
 
 //Path to a file.
-CRITERION_INCLUDE_DIR:PATH=CRITERION_INCLUDE_DIR-NOTFOUND
+CRITERION_INCLUDE_DIR:PATH=/usr/include
 
 //Path to a library.
-CRITERION_LIBRARY:FILEPATH=CRITERION_LIBRARY-NOTFOUND
+CRITERION_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libcriterion.so
 
 //How many times to retry timed-out CTest submissions.
 CTEST_SUBMIT_RETRY_COUNT:STRING=3
@@ -434,7 +434,7 @@ DART_TESTING_TIMEOUT:STRING=1500
 DEBUGSOL:BOOL=OFF
 
 //Path to a program.
-DOXYGEN:FILEPATH=DOXYGEN-NOTFOUND
+DOXYGEN:FILEPATH=/usr/bin/doxygen
 
 //Emscripten HTML output
 EMSCRIPTEN_HTML:BOOL=OFF
@@ -1086,6 +1086,8 @@ DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
 EXPRINT-STRINGS:INTERNAL=none;cppad
 //Details about finding Boost
 FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake][c ][v1.83.0(1.65.0)]
+//Details about finding CRITERION
+FIND_PACKAGE_MESSAGE_DETAILS_CRITERION:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcriterion.so][/usr/include][v()]
 //Details about finding GMP
 FIND_PACKAGE_MESSAGE_DETAILS_GMP:INTERNAL=[/usr/include/x86_64-linux-gnu][/usr/lib/x86_64-linux-gnu/libgmp.so;/usr/lib/x86_64-linux-gnu/libgmpxx.so][v()]
 //Details about finding MPFR
