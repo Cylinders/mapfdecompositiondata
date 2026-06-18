@@ -29,14 +29,14 @@
 
 #include "solver_main.h"
 #include "solver.h"
-//ALGORITHM ONE: CBS
-using namespace std;
 
+using namespace std;
+//ALGORITHM ONE: CBS
 string algorithmOne(const string& mapFilePath, const string& scenFilePath) {
     // --- CBSH ---
     // You can easily change your heuristics and other parameters right here!
 
-    string chosenHeuristic = "WDG";         // Options: "Zero", "CG", "DG", "WDG"
+    string chosenHeuristic = "Zero";         // Options: "Zero", "CG", "DG", "WDG"
     string chosenRectReasoning = "GR";      // Options: "None", "R", "RM", "GR", "Disjoint"
     string chosenCorridorReasoning = "GC";  // Options: "None", "C", "PC", "STC", "GC", "Disjoint"
 
@@ -77,7 +77,7 @@ string algorithmOne(const string& mapFilePath, const string& scenFilePath) {
 
     // --- Load the Instance ---
     // Assuming constructor matches: (map_file, agents_file, num_agents, agent_indices, rows, cols, obs, warehouse_width)
-    Instance instance(mapFilePath, scenFilePath, 200   , "", 0, 0, 0, 0);
+    Instance instance(mapFilePath, scenFilePath, 7  , "", 0, 0, 0, 0);
     srand(seed);
 
     // --- Initialize the Solver ---
@@ -264,7 +264,7 @@ string readMapAndScenFiles(const string& mapFilePath, const string& scenFilePath
     outData << scenStream.rdbuf();
     mapStream.close();
     scenStream.close();
-
+    cout << outData.str(); 
     return outData.str();
 }
 
@@ -278,12 +278,12 @@ int main(int argc, char* argv[]) {
     // cout << readMapAndScenFiles(mapFile, scenFile);
 
     // Now algorithmOne takes the two file paths!
-    // cout << algorithmOne(mapFile, scenFile) << "\n";
+    //cout << algorithmOne(mapFile, scenFile) << "\n";
 
-    // cout << algorithmTwo(myInput) << "\n";
-    cout << algorithmThree("../solvers/bcp-mapf/instances/warehouse_extended/10x30-w5-0.scen") << "\n";
+    //cout << algorithmTwo(mapFile, scenFile) << "\n";
+    //cout << algorithmThree("../solvers/bcp-mapf/instances/warehouse_extended/10x30-w5-0.scen") << "\n";
     
-    // cout << algorithmFour(readMapAndScenFiles(mapFile, scenFile)) << "\n";
+    cout << algorithmFour(readMapAndScenFiles(mapFile, scenFile)) << "\n";
 
     
 
