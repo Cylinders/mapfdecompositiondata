@@ -1,0 +1,3 @@
+[submodule "solvers/bcp-mapf"]
+	path = solvers/bcp-mapf
+	url = https://github.com/ed-lam/bcp-mapf.git

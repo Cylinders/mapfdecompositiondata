@@ -14,6 +14,31 @@
 # EXTERNAL cache entries
 ########################
 
+//should ampl interface be compiled
+AMPL:BOOL=ON
+
+//find and use dependencies as available
+AUTOBUILD:BOOL=OFF
+
+//Path to a program.
+BASH:FILEPATH=/usr/bin/bash
+
+//Use Boost (required to build the binary). Disable if you only
+// want to build libsoplex.
+BOOST:BOOL=ON
+
+//Build the testing tree.
+BUILD_TESTING:BOOL=ON
+
+//Value Computed by CMake
+Binpacking_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/Binpacking
+
+//Value Computed by CMake
+Binpacking_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Binpacking_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/Binpacking
+
 //The directory containing a CMake configuration file for Boost.
 Boost_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0
 
@@ -25,9 +50,6 @@ Boost_INCLUDE_DIR:PATH=/usr/include
 Boost_PROGRAM_OPTIONS_LIBRARY_RELEASE:STRING=/usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.83.0
 
 Boost_SYSTEM_LIBRARY_RELEASE:STRING=/usr/lib/x86_64-linux-gnu/libboost_system.so.1.83.0
-
-//Dependencies for the target
-CBSH2_Library_LIB_DEPENDS:STATIC=general;Boost::program_options;general;Boost::system;general;Boost::filesystem;
 
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=/usr/bin/addr2line
@@ -118,8 +140,56 @@ CMAKE_EXPORT_COMPILE_COMMANDS:BOOL=
 //Value Computed by CMake.
 CMAKE_FIND_PACKAGE_REDIRECTS_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/CMakeFiles/pkgRedirects
 
+//User executables (bin)
+CMAKE_INSTALL_BINDIR:PATH=bin
+
+//Read-only architecture-independent data (DATAROOTDIR)
+CMAKE_INSTALL_DATADIR:PATH=
+
+//Read-only architecture-independent data root (share)
+CMAKE_INSTALL_DATAROOTDIR:PATH=share
+
+//Documentation root (DATAROOTDIR/doc/PROJECT_NAME)
+CMAKE_INSTALL_DOCDIR:PATH=
+
+//C header files (include)
+CMAKE_INSTALL_INCLUDEDIR:PATH=include
+
+//Info documentation (DATAROOTDIR/info)
+CMAKE_INSTALL_INFODIR:PATH=
+
+//Object code libraries (lib)
+CMAKE_INSTALL_LIBDIR:PATH=lib
+
+//Program executables (libexec)
+CMAKE_INSTALL_LIBEXECDIR:PATH=libexec
+
+//Locale-dependent data (DATAROOTDIR/locale)
+CMAKE_INSTALL_LOCALEDIR:PATH=
+
+//Modifiable single-machine data (var)
+CMAKE_INSTALL_LOCALSTATEDIR:PATH=var
+
+//Man documentation (DATAROOTDIR/man)
+CMAKE_INSTALL_MANDIR:PATH=
+
+//C header files for non-gcc (/usr/include)
+CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
+
 //Install path prefix, prepended onto install directories.
 CMAKE_INSTALL_PREFIX:PATH=/usr/local
+
+//Run-time variable data (LOCALSTATEDIR/run)
+CMAKE_INSTALL_RUNSTATEDIR:PATH=
+
+//System admin executables (sbin)
+CMAKE_INSTALL_SBINDIR:PATH=sbin
+
+//Modifiable architecture-independent data (com)
+CMAKE_INSTALL_SHAREDSTATEDIR:PATH=com
+
+//Read-only single-machine data (etc)
+CMAKE_INSTALL_SYSCONFDIR:PATH=etc
 
 //Path to a program.
 CMAKE_LINKER:FILEPATH=/usr/bin/ld
@@ -245,6 +315,313 @@ CMAKE_TAPI:FILEPATH=CMAKE_TAPI-NOTFOUND
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
+//Export all symbols into the DLL
+CMAKE_WINDOWS_EXPORT_ALL_SYMBOLS:BOOL=ON
+
+//enable coverage support
+COVERAGE:BOOL=OFF
+
+//Path to the coverage program that CTest uses for performing coverage
+// inspection
+COVERAGE_COMMAND:FILEPATH=/usr/bin/gcov
+
+//additional ctest arguments for coverage
+COVERAGE_CTEST_ARGS:STRING=
+
+//Extra command line flags to pass to the coverage tool
+COVERAGE_EXTRA_FLAGS:STRING=-l
+
+//Enable to build Debian packages
+CPACK_BINARY_DEB:BOOL=OFF
+
+//Enable to build FreeBSD packages
+CPACK_BINARY_FREEBSD:BOOL=OFF
+
+//Enable to build IFW packages
+CPACK_BINARY_IFW:BOOL=OFF
+
+//Enable to build NSIS packages
+CPACK_BINARY_NSIS:BOOL=OFF
+
+//Enable to build RPM packages
+CPACK_BINARY_RPM:BOOL=OFF
+
+//Enable to build STGZ packages
+CPACK_BINARY_STGZ:BOOL=ON
+
+//Enable to build TBZ2 packages
+CPACK_BINARY_TBZ2:BOOL=OFF
+
+//Enable to build TGZ packages
+CPACK_BINARY_TGZ:BOOL=ON
+
+//Enable to build TXZ packages
+CPACK_BINARY_TXZ:BOOL=OFF
+
+//Enable to build TZ packages
+CPACK_BINARY_TZ:BOOL=ON
+
+//Enable to build RPM source packages
+CPACK_SOURCE_RPM:BOOL=OFF
+
+//Enable to build TBZ2 source packages
+CPACK_SOURCE_TBZ2:BOOL=ON
+
+//Enable to build TGZ source packages
+CPACK_SOURCE_TGZ:BOOL=ON
+
+//Enable to build TXZ source packages
+CPACK_SOURCE_TXZ:BOOL=ON
+
+//Enable to build TZ source packages
+CPACK_SOURCE_TZ:BOOL=ON
+
+//Enable to build ZIP source packages
+CPACK_SOURCE_ZIP:BOOL=OFF
+
+//Path to a file.
+CPLEX_INCLUDE_DIR:PATH=CPLEX_INCLUDE_DIR-NOTFOUND
+
+//Path to a library.
+CPLEX_LIBRARY:FILEPATH=CPLEX_LIBRARY-NOTFOUND
+
+//Path to a file.
+CRITERION_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+CRITERION_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libcriterion.so
+
+//How many times to retry timed-out CTest submissions.
+CTEST_SUBMIT_RETRY_COUNT:STRING=3
+
+//How long to wait between timed-out CTest submissions.
+CTEST_SUBMIT_RETRY_DELAY:STRING=5
+
+//use a c++ compiler for all source files
+CXXONLY:BOOL=OFF
+
+//Value Computed by CMake
+CallableLibrary_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/CallableLibrary
+
+//Value Computed by CMake
+CallableLibrary_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+CallableLibrary_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/CallableLibrary
+
+//Value Computed by CMake
+Coloring_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/applications/Coloring
+
+//Value Computed by CMake
+Coloring_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Coloring_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/applications/Coloring
+
+//Value Computed by CMake
+CycleClustering_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/applications/CycleClustering
+
+//Value Computed by CMake
+CycleClustering_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+CycleClustering_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/applications/CycleClustering
+
+//Maximum time allowed before CTest will kill the test.
+DART_TESTING_TIMEOUT:STRING=1500
+
+//should the debug solution mechanism be enabled
+DEBUGSOL:BOOL=OFF
+
+//Path to a program.
+DOXYGEN:FILEPATH=/usr/bin/doxygen
+
+//Emscripten HTML output
+EMSCRIPTEN_HTML:BOOL=OFF
+
+//options for expression interpreter
+EXPRINT:STRING=cppad
+
+//Value Computed by CMake
+Eventhdlr_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/Eventhdlr
+
+//Value Computed by CMake
+Eventhdlr_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Eventhdlr_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/Eventhdlr
+
+//Directory under which to collect all populated content
+FETCHCONTENT_BASE_DIR:PATH=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/_deps
+
+//Disables all attempts to download or update content and assumes
+// source dirs already exist
+FETCHCONTENT_FULLY_DISCONNECTED:BOOL=OFF
+
+//Enables QUIET option for all content population
+FETCHCONTENT_QUIET:BOOL=ON
+
+//When not empty, overrides where to find pre-populated content
+// for boost
+FETCHCONTENT_SOURCE_DIR_BOOST:PATH=
+
+//Enables UPDATE_DISCONNECTED behavior for all content population
+FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of boost
+FETCHCONTENT_UPDATES_DISCONNECTED_BOOST:BOOL=OFF
+
+//Value Computed by CMake
+FMT_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/fmt
+
+//Installation directory for cmake files, a relative path that
+// will be joined with /usr/local or an absolute path.
+FMT_CMAKE_DIR:STRING=lib/cmake/fmt
+
+//Generate the cuda-test target.
+FMT_CUDA_TEST:BOOL=OFF
+
+//Debug library postfix.
+FMT_DEBUG_POSTFIX:STRING=d
+
+//Generate the doc target.
+FMT_DOC:BOOL=OFF
+
+//Generate the fuzz target.
+FMT_FUZZ:BOOL=OFF
+
+//Installation directory for include files, a relative path that
+// will be joined with /usr/local or an absolute path.
+FMT_INC_DIR:STRING=include
+
+//Generate the install target.
+FMT_INSTALL:BOOL=ON
+
+//Value Computed by CMake
+FMT_IS_TOP_LEVEL:STATIC=OFF
+
+//Installation directory for libraries, a relative path that will
+// be joined to /usr/local or an absolute path.
+FMT_LIB_DIR:STRING=lib
+
+//Build a module instead of a traditional library.
+FMT_MODULE:BOOL=OFF
+
+//Include OS-specific APIs.
+FMT_OS:BOOL=ON
+
+//Enable extra warnings and expensive tests.
+FMT_PEDANTIC:BOOL=OFF
+
+//Installation directory for pkgconfig (.pc) files, a relative
+// path that will be joined with /usr/local or an absolute path.
+FMT_PKGCONFIG_DIR:STRING=lib/pkgconfig
+
+//Value Computed by CMake
+FMT_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/fmt
+
+//Expose headers with marking them as system.
+FMT_SYSTEM_HEADERS:BOOL=OFF
+
+//Generate the test target.
+FMT_TEST:BOOL=OFF
+
+//Enable Unicode support.
+FMT_UNICODE:BOOL=ON
+
+//Halt the compilation with an error on compiler warnings.
+FMT_WERROR:BOOL=OFF
+
+//Value Computed by CMake
+GMI_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/GMI
+
+//Value Computed by CMake
+GMI_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+GMI_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/GMI
+
+//Use GMP
+GMP:BOOL=ON
+
+//Path to a library.
+GMPXX_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libgmpxx.so
+
+//Path to a file.
+GMP_INCLUDE_DIRS:PATH=/usr/include/x86_64-linux-gnu
+
+//Path to a library.
+GMP_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libgmp.so
+
+//Path to a file.
+GUROBI_INCLUDE_DIRS:PATH=GUROBI_INCLUDE_DIRS-NOTFOUND
+
+//Path to a library.
+GUROBI_LIBRARY:FILEPATH=GUROBI_LIBRARY-NOTFOUND
+
+//should lapack be linked
+LAPACK:BOOL=OFF
+
+//build SCIP/SoPlex in legacy mode (spx1 interface)
+LEGACY:BOOL=OFF
+
+//Path to a library.
+LIBM:FILEPATH=/usr/lib/x86_64-linux-gnu/libm.so
+
+//Value Computed by CMake
+LOP_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/LOP
+
+//Value Computed by CMake
+LOP_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+LOP_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/LOP
+
+//options for LP solver
+LPS:STRING=spx
+
+//double check SoPlex results with CPLEX
+LPSCHECK:BOOL=OFF
+
+//Command to build the project
+MAKECOMMAND:STRING=/usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}"
+
+//Path to the memory checking command, used for memory error detection.
+MEMORYCHECK_COMMAND:FILEPATH=/usr/bin/compute-sanitizer
+
+//File that contains suppressions for the memory checker
+MEMORYCHECK_SUPPRESSIONS_FILE:FILEPATH=
+
+//Value Computed by CMake
+MIPSolver_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/MIPSolver
+
+//Value Computed by CMake
+MIPSolver_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+MIPSolver_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/MIPSolver
+
+//Use MPFR
+MPFR:BOOL=ON
+
+//Path to a file.
+MPFR_INCLUDES:PATH=/usr/include
+
+//Path to a library.
+MPFR_LIBRARIES:FILEPATH=/usr/lib/x86_64-linux-gnu/libmpfr.so
+
+//use static runtime libraries for Visual Studio compiler
+MT:BOOL=OFF
+
+//Value Computed by CMake
+MinIISC_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/applications/MinIISC
+
+//Value Computed by CMake
+MinIISC_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+MinIISC_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/applications/MinIISC
+
 //Value Computed by CMake
 MyMAPFProject_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build
 
@@ -253,6 +630,181 @@ MyMAPFProject_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
 MyMAPFProject_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata
+
+//should block and buffer memory be disabled
+NOBLKBUFMEM:BOOL=OFF
+
+//should block memory be disabled
+NOBLKMEM:BOOL=OFF
+
+//should buffer memory be disabled
+NOBUFMEM:BOOL=OFF
+
+//should papilo library be linked
+PAPILO:BOOL=ON
+
+//The directory containing a CMake configuration file for PAPILO.
+PAPILO_DIR:PATH=PAPILO_DIR-NOTFOUND
+
+//should scip be compiled thread safe (deprecated, use THREADSAFE)
+PARASCIP:BOOL=OFF
+
+//Path to a program.
+PYTHON:FILEPATH=/home/ogvruth/miniconda3/bin/python3
+
+//should quadmath library be used
+QUADMATH:BOOL=OFF
+
+//Value Computed by CMake
+Queens_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/Queens
+
+//Value Computed by CMake
+Queens_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Queens_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/Queens
+
+//should readline be linked
+READLINE:BOOL=ON
+
+//Path to a file.
+Readline_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+Readline_LIBRARY:FILEPATH=/usr/lib/x86_64-linux-gnu/libreadline.so
+
+//Path to a file.
+Readline_ROOT_DIR:PATH=/usr
+
+//Value Computed by CMake
+Relaxator_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/Relaxator
+
+//Value Computed by CMake
+Relaxator_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Relaxator_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/Relaxator
+
+//Value Computed by CMake
+Rinpacking_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/applications/Ringpacking
+
+//Value Computed by CMake
+Rinpacking_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Rinpacking_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/applications/Ringpacking
+
+//should the address sanitizer be enabled in debug mode if available
+SANITIZE_ADDRESS:BOOL=OFF
+
+//should the memory sanitizer be enabled in debug mode if available
+SANITIZE_MEMORY:BOOL=OFF
+
+//should the thread sanitizer be enabled in debug mode if available
+SANITIZE_THREAD:BOOL=OFF
+
+//should the undefined behavior sanitizer be enabled in debug mode
+// if available
+SANITIZE_UNDEFINED:BOOL=ON
+
+//Value Computed by CMake
+SCIP_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip
+
+//Path to a file.
+SCIP_CONFIG_DIR:PATH=SCIP_CONFIG_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for SCIP.
+SCIP_DIR:PATH=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip
+
+//Path to a file.
+SCIP_INCLUDE_DIR:PATH=SCIP_INCLUDE_DIR-NOTFOUND
+
+//Value Computed by CMake
+SCIP_IS_TOP_LEVEL:STATIC=OFF
+
+//Path to a library.
+SCIP_LIBRARY:FILEPATH=SCIP_LIBRARY-NOTFOUND
+
+//Value Computed by CMake
+SCIP_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip
+
+//Build shared libraries
+SHARED:BOOL=ON
+
+//Name of the computer/site where compile is being run
+SITE:STRING=LAPTOP-M11L2ILH
+
+//Value Computed by CMake
+SOPLEX_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/soplex
+
+//Value Computed by CMake
+SOPLEX_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+SOPLEX_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/soplex
+
+//prefer static gmp library
+STATIC_GMP:BOOL=OFF
+
+//options for symmetry computation
+SYM:STRING=snauty
+
+//Value Computed by CMake
+Scheduler_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/applications/Scheduler
+
+//Value Computed by CMake
+Scheduler_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Scheduler_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/applications/Scheduler
+
+//Value Computed by CMake
+Sudoku_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/Sudoku
+
+//Value Computed by CMake
+Sudoku_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+Sudoku_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/Sudoku
+
+//should scip be compiled thread safe
+THREADSAFE:BOOL=ON
+
+//options for thread support library
+TPI:STRING=none
+
+//Value Computed by CMake
+TSP_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/TSP
+
+//Value Computed by CMake
+TSP_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+TSP_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/TSP
+
+//Value Computed by CMake
+VRP_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/VRP
+
+//Value Computed by CMake
+VRP_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+VRP_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/examples/VRP
+
+//should worhp be linked
+WORHP:BOOL=OFF
+
+//should zlib be linked
+ZLIB:BOOL=ON
+
+//Path to a file.
+ZLIB_INCLUDE_DIR:PATH=/usr/include
+
+//Path to a library.
+ZLIB_LIBRARY_DEBUG:FILEPATH=ZLIB_LIBRARY_DEBUG-NOTFOUND
+
+//Path to a library.
+ZLIB_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libz.so
 
 //The directory containing a CMake configuration file for boost_atomic.
 boost_atomic_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_atomic-1.83.0
@@ -268,6 +820,27 @@ boost_program_options_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_program_opt
 
 //The directory containing a CMake configuration file for boost_system.
 boost_system_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/boost_system-1.83.0
+
+//Dependencies for the target
+libscip_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libreadline.so;general;libsoplex-pic;
+
+//Dependencies for the target
+libsoplex-pic_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libgmp.so;general;/usr/lib/x86_64-linux-gnu/libgmpxx.so;general;/usr/lib/x86_64-linux-gnu/libmpfr.so;
+
+//Dependencies for the target
+libsoplex_LIB_DEPENDS:STATIC=general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libgmp.so;general;/usr/lib/x86_64-linux-gnu/libgmpxx.so;general;/usr/lib/x86_64-linux-gnu/libmpfr.so;
+
+//Dependencies for the target
+libsoplexshared_LIB_DEPENDS:STATIC=general;libsoplex;general;/usr/lib/x86_64-linux-gnu/libz.so;general;/usr/lib/x86_64-linux-gnu/libgmp.so;general;/usr/lib/x86_64-linux-gnu/libgmpxx.so;general;/usr/lib/x86_64-linux-gnu/libmpfr.so;
+
+//Value Computed by CMake
+soplex_testing_BINARY_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/soplex/tests/c_interface
+
+//Value Computed by CMake
+soplex_testing_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+soplex_testing_SOURCE_DIR:STATIC=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/solvers/bcp-mapf/scipoptsuite-9.2.0/soplex/tests/c_interface
 
 
 ########################
@@ -294,6 +867,8 @@ CMAKE_COLOR_MAKEFILE-ADVANCED:INTERNAL=1
 CMAKE_COMMAND:INTERNAL=/usr/bin/cmake
 //Path to cpack program executable.
 CMAKE_CPACK_COMMAND:INTERNAL=/usr/bin/cpack
+//ADVANCED property for variable: CMAKE_CTEST_COMMAND
+CMAKE_CTEST_COMMAND-ADVANCED:INTERNAL=1
 //Path to ctest program executable.
 CMAKE_CTEST_COMMAND:INTERNAL=/usr/bin/ctest
 //ADVANCED property for variable: CMAKE_CXX_COMPILER
@@ -357,8 +932,40 @@ CMAKE_GENERATOR_TOOLSET:INTERNAL=
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/home/ogvruth/zhouResearchSP26/mapfdecompositiondata
+//ADVANCED property for variable: CMAKE_INSTALL_BINDIR
+CMAKE_INSTALL_BINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATADIR
+CMAKE_INSTALL_DATADIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DATAROOTDIR
+CMAKE_INSTALL_DATAROOTDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_DOCDIR
+CMAKE_INSTALL_DOCDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INCLUDEDIR
+CMAKE_INSTALL_INCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_INFODIR
+CMAKE_INSTALL_INFODIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBDIR
+CMAKE_INSTALL_LIBDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LIBEXECDIR
+CMAKE_INSTALL_LIBEXECDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALEDIR
+CMAKE_INSTALL_LOCALEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_LOCALSTATEDIR
+CMAKE_INSTALL_LOCALSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_MANDIR
+CMAKE_INSTALL_MANDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_OLDINCLUDEDIR
+CMAKE_INSTALL_OLDINCLUDEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_RUNSTATEDIR
+CMAKE_INSTALL_RUNSTATEDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SBINDIR
+CMAKE_INSTALL_SBINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SHAREDSTATEDIR
+CMAKE_INSTALL_SHAREDSTATEDIR-ADVANCED:INTERNAL=1
 //Install .so files without execute permission.
 CMAKE_INSTALL_SO_NO_EXE:INTERNAL=1
+//ADVANCED property for variable: CMAKE_INSTALL_SYSCONFDIR
+CMAKE_INSTALL_SYSCONFDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_LINKER
 CMAKE_LINKER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_MAKE_PROGRAM
@@ -376,7 +983,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=1
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=40
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -421,10 +1028,112 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Compiler support for a deprecated attribute
+COMPILER_HAS_DEPRECATED:INTERNAL=1
+//Test COMPILER_HAS_DEPRECATED_ATTR
+COMPILER_HAS_DEPRECATED_ATTR:INTERNAL=1
+//Test COMPILER_HAS_HIDDEN_INLINE_VISIBILITY
+COMPILER_HAS_HIDDEN_INLINE_VISIBILITY:INTERNAL=1
+//Test COMPILER_HAS_HIDDEN_VISIBILITY
+COMPILER_HAS_HIDDEN_VISIBILITY:INTERNAL=1
+//ADVANCED property for variable: COVERAGE_COMMAND
+COVERAGE_COMMAND-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: COVERAGE_EXTRA_FLAGS
+COVERAGE_EXTRA_FLAGS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_DEB
+CPACK_BINARY_DEB-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_FREEBSD
+CPACK_BINARY_FREEBSD-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_IFW
+CPACK_BINARY_IFW-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_NSIS
+CPACK_BINARY_NSIS-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_RPM
+CPACK_BINARY_RPM-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_STGZ
+CPACK_BINARY_STGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TBZ2
+CPACK_BINARY_TBZ2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TGZ
+CPACK_BINARY_TGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TXZ
+CPACK_BINARY_TXZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_BINARY_TZ
+CPACK_BINARY_TZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_RPM
+CPACK_SOURCE_RPM-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TBZ2
+CPACK_SOURCE_TBZ2-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TGZ
+CPACK_SOURCE_TGZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TXZ
+CPACK_SOURCE_TXZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_TZ
+CPACK_SOURCE_TZ-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CPACK_SOURCE_ZIP
+CPACK_SOURCE_ZIP-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CRITERION_INCLUDE_DIR
+CRITERION_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CRITERION_LIBRARY
+CRITERION_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CTEST_SUBMIT_RETRY_COUNT
+CTEST_SUBMIT_RETRY_COUNT-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: CTEST_SUBMIT_RETRY_DELAY
+CTEST_SUBMIT_RETRY_DELAY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: DART_TESTING_TIMEOUT
+DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
+//STRINGS property for variable: EXPRINT
+EXPRINT-STRINGS:INTERNAL=none;cppad
 //Details about finding Boost
-FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake][cfound components: program_options system filesystem ][v1.83.0()]
+FIND_PACKAGE_MESSAGE_DETAILS_Boost:INTERNAL=[/usr/lib/x86_64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake][c ][v1.83.0(1.65.0)]
+//Details about finding CRITERION
+FIND_PACKAGE_MESSAGE_DETAILS_CRITERION:INTERNAL=[/usr/lib/x86_64-linux-gnu/libcriterion.so][/usr/include][v()]
+//Details about finding GMP
+FIND_PACKAGE_MESSAGE_DETAILS_GMP:INTERNAL=[/usr/include/x86_64-linux-gnu][/usr/lib/x86_64-linux-gnu/libgmp.so;/usr/lib/x86_64-linux-gnu/libgmpxx.so][v()]
+//Details about finding MPFR
+FIND_PACKAGE_MESSAGE_DETAILS_MPFR:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libmpfr.so][TRUE][v(1.0.0)]
+//Details about finding Readline
+FIND_PACKAGE_MESSAGE_DETAILS_Readline:INTERNAL=[/usr/include][/usr/lib/x86_64-linux-gnu/libreadline.so][v()]
+//Details about finding ZLIB
+FIND_PACKAGE_MESSAGE_DETAILS_ZLIB:INTERNAL=[/usr/lib/x86_64-linux-gnu/libz.so][/usr/include][c ][v1.3()]
+//Have symbol FE_DOWNWARD
+LINUX_ROUNDING:INTERNAL=1
+//STRINGS property for variable: LPS
+LPS-STRINGS:INTERNAL=spx;cpx;grb;xprs;clp;glop;msk;qso;highs;none
+//ADVANCED property for variable: MAKECOMMAND
+MAKECOMMAND-ADVANCED:INTERNAL=1
+//Test MARCH_NATIVE
+MARCH_NATIVE:INTERNAL=1
+//ADVANCED property for variable: MEMORYCHECK_COMMAND
+MEMORYCHECK_COMMAND-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MEMORYCHECK_SUPPRESSIONS_FILE
+MEMORYCHECK_SUPPRESSIONS_FILE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPFR_INCLUDES
+MPFR_INCLUDES-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: MPFR_LIBRARIES
+MPFR_LIBRARIES-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Readline_INCLUDE_DIR
+Readline_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Readline_LIBRARY
+Readline_LIBRARY-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Readline_ROOT_DIR
+Readline_ROOT_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: SITE
+SITE-ADVANCED:INTERNAL=1
+//STRINGS property for variable: SYM
+SYM-STRINGS:INTERNAL=bliss;sbliss;nauty;snauty;none
+//STRINGS property for variable: TPI
+TPI-STRINGS:INTERNAL=none;tny;omp
+//ADVANCED property for variable: ZLIB_INCLUDE_DIR
+ZLIB_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_DEBUG
+ZLIB_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: ZLIB_LIBRARY_RELEASE
+ZLIB_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
+//CMAKE_INSTALL_PREFIX during last run
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=/usr/local
 //ADVANCED property for variable: boost_atomic_DIR
 boost_atomic_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: boost_filesystem_DIR

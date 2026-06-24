@@ -1894,14 +1894,10 @@ namespace sReloc
         }
         else
         {
-            // The moment a line doesn't start with '(', we've reached the end 
-            // of the vertices. This is likely the "E =" (Edges) line. Break out.
             break;
         }
     }
 
-    // 3. Read all Edges
-    // We continue reading from the stream, expecting lines starting with '{'
     while (std::getline(iss, line))
     {
         if (line.empty()) continue;
@@ -1910,8 +1906,6 @@ namespace sReloc
         {
             int u_id = 0, v_id = 0;
             
-            // line.c_str() + 1 safely skips the '{' character at index 0.
-            // We use sscanf to grab the integers natively.
             if (sscanf(line.c_str() + 1, "%d,%d", &u_id, &v_id) == 2)
             {
 #ifdef sVERBOSE
@@ -1921,7 +1915,6 @@ namespace sReloc
         }
         else
         {
-            // Stop if we hit a line that doesn't start with '{'
             break; 
         }
     }

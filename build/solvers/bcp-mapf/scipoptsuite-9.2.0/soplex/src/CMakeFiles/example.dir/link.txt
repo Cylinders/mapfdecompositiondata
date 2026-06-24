@@ -1,0 +1,1 @@
+/usr/bin/c++  -Wno-psabi -Wno-psabi -Wall -Wno-strict-overflow -Wno-use-after-free -Wno-stringop-overflow -O3 -DNDEBUG CMakeFiles/example.dir/example.cpp.o -o ../../../../../bin/example  ../../../../../lib/libsoplex.a /usr/lib/x86_64-linux-gnu/libz.so /usr/lib/x86_64-linux-gnu/libgmp.so /usr/lib/x86_64-linux-gnu/libgmpxx.so /usr/lib/x86_64-linux-gnu/libmpfr.so 

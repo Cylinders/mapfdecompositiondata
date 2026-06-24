@@ -24,7 +24,7 @@
 #include <sys/times.h>
 #include <unistd.h>
 #include <string>
-
+#include <utility> 
 #include "config.h"
 #include "compile.h"
 #include "defs.h"
@@ -119,6 +119,7 @@ std::string solve_MultirobotInstance_SAT(const sCommandParameters &command_param
 
 	printf("Reading graph...\n");
 	sResult result = environment.from_String_multirobot(command_parameters.m_input_filename);
+
 	if (sFAILED(result))
 	{
 	    printf("Error: Reading graph from file %s failed (code = %d).\n", command_parameters.m_input_filename.c_str(), result);

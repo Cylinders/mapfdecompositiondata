@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG  -ldl CMakeFiles/sudoku.dir/src/sudoku_main.cpp.o -o ../../bin/examples/sudoku  -Wl,-rpath,/home/ogvruth/zhouResearchSP26/mapfdecompositiondata/build/solvers/bcp-mapf/scipoptsuite-9.2.0/scip/lib ../../lib/libscip.so.9.2.0.0 
